@@ -78,8 +78,8 @@ const PRICING = [
 
 export default function HomePage() {
   return (
-    <>
-      <section className="relative overflow-hidden border-b border-border/70 bg-background">
+    <div className="bg-[linear-gradient(180deg,#ffffff_0%,#fffaf6_42%,rgba(255,95,31,0.16)_100%)]">
+      <section className="relative overflow-hidden border-b border-border/70 bg-transparent">
         <div className="mx-auto max-w-5xl px-6 pb-20 pt-24 text-center md:pt-32">
           <ScrollReveal>
             <Badge variant="outline" className="mb-8">
@@ -161,7 +161,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-warm-100/55">
+      <section className="border-y border-border bg-transparent">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <ScrollReveal>
             <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
@@ -231,7 +231,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-background">
+      <section className="border-t border-border bg-transparent">
         <div className="mx-auto max-w-4xl px-6 py-24 text-center">
           <ScrollReveal>
             <h2 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
@@ -251,6 +251,6 @@ export default function HomePage() {
           </ScrollReveal>
         </div>
       </section>
-    </>
+    </div>
   );
 }
