@@ -10,22 +10,14 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
-<<<<<<< HEAD
-    "@prisma/client": "^6.21.0",
-=======
     "@prisma/client": "^6.0.0",
->>>>>>> 314469a (Switch to Neon Postgres and regenerate Prisma client)
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "zod": "^4.3.6"
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "prisma": "^6.21.0",
-=======
     "prisma": "^6.0.0",
->>>>>>> 314469a (Switch to Neon Postgres and regenerate Prisma client)
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
