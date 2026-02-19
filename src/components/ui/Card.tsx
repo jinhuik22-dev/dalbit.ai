@@ -17,8 +17,8 @@ export function Card({
       className={[
         "bg-card border border-border rounded-2xl p-6 shadow-warm",
         hover
-          ? "hover:border-warm-400 hover:shadow-warm-md transition-all duration-300"
-          : "",
+          ? "hover:border-warm-400 hover:shadow-warm-md hover:-translate-y-1 transition-all duration-300 ease-out"
+          : "transition-all duration-300",
         className,
       ]
         .filter(Boolean)

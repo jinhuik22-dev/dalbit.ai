@@ -10,14 +10,24 @@ const NAV_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="bg-warm-900 text-warm-300" role="contentinfo">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="relative bg-warm-900 text-warm-300" role="contentinfo">
+      {/* Soft gradient transition from page content */}
+      <div
+        className="absolute -top-px left-0 right-0 h-24 pointer-events-none"
+        aria-hidden="true"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(255,255,255,0) 0%, var(--color-warm-900) 100%)",
+        }}
+      />
+
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 pt-24">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           {/* Column 1: Logo + Tagline */}
           <div>
             <Link
               href="/"
-              className="font-serif text-xl font-bold text-white transition-colors hover:text-accent-light"
+              className="font-serif text-xl font-bold text-white transition-colors hover:text-accent"
             >
               Dalbit
             </Link>

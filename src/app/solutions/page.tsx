@@ -9,6 +9,7 @@ import {
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { Badge } from "@/components/ui/Badge";
 import { H1, H2 } from "@/components/ui/Heading";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Solutions",
@@ -81,15 +82,17 @@ function BenefitGrid({
 }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {benefits.map((benefit) => (
-        <Card key={benefit.title} hover>
-          <CardHeader>
-            <CardTitle>{benefit.title}</CardTitle>
-          </CardHeader>
-          <CardDescription className="text-base leading-relaxed">
-            {benefit.description}
-          </CardDescription>
-        </Card>
+      {benefits.map((benefit, i) => (
+        <ScrollReveal key={benefit.title} delay={i * 120}>
+          <Card hover className="h-full">
+            <CardHeader>
+              <CardTitle>{benefit.title}</CardTitle>
+            </CardHeader>
+            <CardDescription className="text-base leading-relaxed">
+              {benefit.description}
+            </CardDescription>
+          </Card>
+        </ScrollReveal>
       ))}
     </div>
   );
@@ -99,12 +102,14 @@ function BenefitGrid({
 
 function WorkflowExample({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-10 bg-surface border-l-4 border-accent rounded-2xl p-6 md:p-8 shadow-warm">
-      <p className="text-xs font-medium uppercase tracking-wider text-accent mb-3">
-        Example workflow
-      </p>
-      <p className="text-foreground italic leading-relaxed">{children}</p>
-    </div>
+    <ScrollReveal delay={200}>
+      <div className="mt-10 bg-surface border-l-4 border-accent rounded-2xl p-6 md:p-8 shadow-warm">
+        <p className="text-xs font-medium uppercase tracking-wider text-accent mb-3">
+          Example workflow
+        </p>
+        <p className="text-foreground italic leading-relaxed">{children}</p>
+      </div>
+    </ScrollReveal>
   );
 }
 
@@ -114,42 +119,59 @@ export default function SolutionsPage() {
   return (
     <>
       {/* ─── Hero ─── */}
-      <section className="relative gradient-hero">
-        <div className="max-w-6xl mx-auto px-6 py-28 md:py-36">
+      <section className="relative overflow-hidden gradient-hero">
+        <div className="max-w-6xl mx-auto px-6 pt-20 pb-28 md:pt-32 md:pb-40">
           <div className="max-w-3xl">
-            <Badge variant="accent" className="mb-6">
-              Solutions
-            </Badge>
-            <H1 className="mb-6">
-              Tailored for every side of the creative table
-            </H1>
-            <p className="text-muted text-lg md:text-xl leading-relaxed max-w-2xl mb-10">
-              Whatever your role in the cross-border creative economy, Dalbit
-              meets you where you are.
-            </p>
-            <Button href="/start" size="lg">
-              Start the Intake
-            </Button>
+            <ScrollReveal delay={0}>
+              <Badge variant="accent" className="mb-6">
+                Solutions
+              </Badge>
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <H1 className="mb-6">
+                Tailored for every side of the creative table
+              </H1>
+            </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <p className="text-muted text-lg md:text-xl leading-relaxed max-w-2xl mb-10">
+                Whatever your role in the cross-border creative economy, Dalbit
+                meets you where you are.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={300}>
+              <Button href="/start" size="lg">
+                Start the Intake
+              </Button>
+            </ScrollReveal>
           </div>
         </div>
 
-        {/* Decorative radial */}
         <div
-          className="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none"
+          className="absolute top-0 right-0 w-1/2 h-full opacity-30 pointer-events-none"
           aria-hidden="true"
           style={{
             background:
-              "radial-gradient(circle at 70% 30%, rgba(180,83,9,0.10), transparent 60%)",
+              "radial-gradient(circle at 70% 30%, rgba(225,6,0,0.06), transparent 60%)",
+          }}
+        />
+        <div
+          className="absolute bottom-0 left-0 w-full h-px"
+          aria-hidden="true"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, rgba(10,10,10,0.08) 50%, transparent)",
           }}
         />
       </section>
 
       {/* ─── For Creators ─── */}
       <Section id="creators" className="gradient-section">
-        <SectionHeader
-          title="For Creators"
-          subtitle="Get discovered by global clients. Get better briefs. Fewer misunderstandings."
-        />
+        <ScrollReveal>
+          <SectionHeader
+            title="For Creators"
+            subtitle="Get discovered by global clients. Get better briefs. Fewer misunderstandings."
+          />
+        </ScrollReveal>
         <BenefitGrid benefits={creatorBenefits} />
         <WorkflowExample>
           A Korean illustrator receives a brief from a US brand. Dalbit
@@ -160,10 +182,12 @@ export default function SolutionsPage() {
 
       {/* ─── For Brands ─── */}
       <Section id="brands">
-        <SectionHeader
-          title="For Brands"
-          subtitle="Find talent that fits the culture. Not just the brief."
-        />
+        <ScrollReveal>
+          <SectionHeader
+            title="For Brands"
+            subtitle="Find talent that fits the culture. Not just the brief."
+          />
+        </ScrollReveal>
         <BenefitGrid benefits={brandBenefits} />
         <WorkflowExample>
           A Japanese beauty brand searches for a bilingual creator in LA. Dalbit
@@ -174,10 +198,12 @@ export default function SolutionsPage() {
 
       {/* ─── For Agencies ─── */}
       <Section id="agencies" className="gradient-section">
-        <SectionHeader
-          title="For Agencies"
-          subtitle="Standardize cross-border communications. Reduce revision cycles."
-        />
+        <ScrollReveal>
+          <SectionHeader
+            title="For Agencies"
+            subtitle="Standardize cross-border communications. Reduce revision cycles."
+          />
+        </ScrollReveal>
         <BenefitGrid benefits={agencyBenefits} />
         <WorkflowExample>
           A Seoul-based agency manages creators across 4 markets. Dalbit
@@ -187,23 +213,35 @@ export default function SolutionsPage() {
       </Section>
 
       {/* ─── Final CTA ─── */}
-      <Section className="border-t border-border/50">
-        <div className="max-w-3xl mx-auto text-center">
-          <H2 className="mb-4">Find your starting point</H2>
-          <p className="text-muted text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-            Whether you create, commission, or coordinate — Dalbit gives you the
-            cultural intelligence layer to do it better.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/start" size="lg">
-              Start the Intake
-            </Button>
-            <Button href="/product" variant="secondary" size="lg">
-              View Product
-            </Button>
-          </div>
+      <section className="relative overflow-hidden border-t border-border/50">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          aria-hidden="true"
+          style={{
+            background:
+              "radial-gradient(ellipse at 50% 100%, rgba(225,6,0,0.03) 0%, transparent 60%)",
+          }}
+        />
+        <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto text-center">
+              <H2 className="mb-4">Find your starting point</H2>
+              <p className="text-muted text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+                Whether you create, commission, or coordinate — Dalbit gives you the
+                cultural intelligence layer to do it better.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button href="/start" size="lg">
+                  Start the Intake
+                </Button>
+                <Button href="/product" variant="secondary" size="lg">
+                  View Product
+                </Button>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
-      </Section>
+      </section>
     </>
   );
 }

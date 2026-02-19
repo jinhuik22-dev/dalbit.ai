@@ -15,6 +15,15 @@ const NAV_LINKS = [
 export function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Track scroll position for nav styling
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -50,7 +59,11 @@ export function Navbar() {
 
   return (
     <nav
-      className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md"
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "border-b border-border bg-background/80 backdrop-blur-xl shadow-warm"
+          : "border-b border-transparent bg-background/0 backdrop-blur-none"
+      }`}
       role="navigation"
       aria-label="Main navigation"
     >
@@ -70,19 +83,22 @@ export function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
+                className={`relative rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${
                   isActive(href)
-                    ? "bg-accent/10 text-accent"
-                    : "text-muted hover:bg-card hover:text-foreground"
+                    ? "text-accent"
+                    : "text-muted hover:text-foreground"
                 }`}
               >
                 {label}
+                {isActive(href) && (
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-4 rounded-full bg-accent" />
+                )}
               </Link>
             ))}
 
             <Link
               href="/start"
-              className="ml-4 inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white transition-all hover:bg-accent-light"
+              className="ml-4 inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-warm-md hover:-translate-y-0.5"
             >
               Start the Intake
             </Link>
@@ -128,7 +144,9 @@ export function Navbar() {
       <div
         id="mobile-menu"
         className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
-          mobileOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+          mobileOpen
+            ? "max-h-[400px] opacity-100 bg-background/95 backdrop-blur-xl"
+            : "max-h-0 opacity-0"
         }`}
         aria-hidden={!mobileOpen}
       >
@@ -151,7 +169,7 @@ export function Navbar() {
             <Link
               href="/start"
               onClick={() => setMobileOpen(false)}
-              className="block w-full rounded-lg bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-all hover:bg-accent-light"
+              className="block w-full rounded-lg bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-all hover:bg-accent-hover"
             >
               Start the Intake
             </Link>

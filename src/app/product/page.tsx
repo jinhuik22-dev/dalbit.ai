@@ -9,11 +9,12 @@ import {
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { Badge } from "@/components/ui/Badge";
 import { H1, H2 } from "@/components/ui/Heading";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Product",
   description:
-    "Dalbit is built for cross-border creative work. Cultural intelligence, premium profiles, and collaboration workflows \u2014 all in one platform.",
+    "Dalbit is built for cross-border creative work. Cultural intelligence, premium profiles, and collaboration workflows — all in one platform.",
 };
 
 /* ---------- Data ---------- */
@@ -84,87 +85,108 @@ export default function ProductPage() {
   return (
     <>
       {/* ─── Hero ─── */}
-      <section className="relative gradient-hero">
-        <div className="max-w-6xl mx-auto px-6 py-28 md:py-36">
+      <section className="relative overflow-hidden gradient-hero">
+        <div className="max-w-6xl mx-auto px-6 pt-20 pb-28 md:pt-32 md:pb-40">
           <div className="max-w-3xl">
-            <Badge variant="accent" className="mb-6">
-              Product
-            </Badge>
-            <H1 className="mb-6">Built for cross-border creative work</H1>
-            <p className="text-muted text-lg md:text-xl leading-relaxed max-w-2xl mb-10">
-              Dalbit is the cultural intelligence layer that sits beneath every
-              global collaboration. We combine verified profiles, structured
-              workflows, and contextual insight so creative teams can do their
-              best work across languages and markets.
-            </p>
-            <Button href="/start" size="lg">
-              Start the Intake
-            </Button>
+            <ScrollReveal delay={0}>
+              <Badge variant="accent" className="mb-6">
+                Product
+              </Badge>
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <H1 className="mb-6">Built for cross-border creative work</H1>
+            </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <p className="text-muted text-lg md:text-xl leading-relaxed max-w-2xl mb-10">
+                Dalbit is the cultural intelligence layer that sits beneath every
+                global collaboration. We combine verified profiles, structured
+                workflows, and contextual insight so creative teams can do their
+                best work across languages and markets.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={300}>
+              <Button href="/start" size="lg">
+                Start the Intake
+              </Button>
+            </ScrollReveal>
           </div>
         </div>
 
-        {/* Decorative radial */}
         <div
-          className="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none"
+          className="absolute top-0 right-0 w-1/2 h-full opacity-30 pointer-events-none"
           aria-hidden="true"
           style={{
             background:
-              "radial-gradient(circle at 70% 30%, rgba(180,83,9,0.10), transparent 60%)",
+              "radial-gradient(circle at 70% 30%, rgba(225,6,0,0.06), transparent 60%)",
+          }}
+        />
+        <div
+          className="absolute bottom-0 left-0 w-full h-px"
+          aria-hidden="true"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, rgba(10,10,10,0.08) 50%, transparent)",
           }}
         />
       </section>
 
       {/* ─── Three Pillars ─── */}
       <Section id="pillars">
-        <SectionHeader
-          title="Three pillars, one platform"
-          subtitle="Each layer reinforces the others. Together, they give every collaboration a foundation of shared understanding."
-        />
+        <ScrollReveal>
+          <SectionHeader
+            title="Three pillars, one platform"
+            subtitle="Each layer reinforces the others. Together, they give every collaboration a foundation of shared understanding."
+          />
+        </ScrollReveal>
         <div className="space-y-8">
           {pillars.map((pillar, index) => (
-            <Card key={pillar.title} className="p-8 md:p-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
-                {/* Left: text content */}
-                <div className={index % 2 === 1 ? "md:order-2" : ""}>
-                  <CardHeader>
-                    <Badge variant="accent" className="mb-3">
-                      {pillar.badge}
-                    </Badge>
-                    <CardTitle className="text-2xl md:text-3xl">
-                      {pillar.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardDescription className="text-base leading-relaxed">
-                    {pillar.description}
-                  </CardDescription>
-                </div>
+            <ScrollReveal key={pillar.title} delay={index * 100}>
+              <Card className="p-8 md:p-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+                  {/* Left: text content */}
+                  <div className={index % 2 === 1 ? "md:order-2" : ""}>
+                    <CardHeader>
+                      <Badge variant="accent" className="mb-3">
+                        {pillar.badge}
+                      </Badge>
+                      <CardTitle className="text-2xl md:text-3xl">
+                        {pillar.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardDescription className="text-base leading-relaxed">
+                      {pillar.description}
+                    </CardDescription>
+                  </div>
 
-                {/* Right: detail list */}
-                <div className={index % 2 === 1 ? "md:order-1" : ""}>
-                  <ul className="space-y-4">
-                    {pillar.details.map((detail) => (
-                      <li
-                        key={detail}
-                        className="flex items-start gap-3 text-sm leading-relaxed"
-                      >
-                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0" />
-                        <span className="text-foreground">{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Right: detail list */}
+                  <div className={index % 2 === 1 ? "md:order-1" : ""}>
+                    <ul className="space-y-4">
+                      {pillar.details.map((detail) => (
+                        <li
+                          key={detail}
+                          className="flex items-start gap-3 text-sm leading-relaxed"
+                        >
+                          <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0" />
+                          <span className="text-foreground">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </ScrollReveal>
           ))}
         </div>
       </Section>
 
       {/* ─── Product Story Timeline ─── */}
       <Section id="roadmap" className="gradient-section">
-        <SectionHeader
-          title="Where we&rsquo;re going"
-          subtitle="Dalbit is being built in public, one thoughtful layer at a time."
-        />
+        <ScrollReveal>
+          <SectionHeader
+            title="Where we&rsquo;re going"
+            subtitle="Dalbit is being built in public, one thoughtful layer at a time."
+          />
+        </ScrollReveal>
 
         <div className="max-w-3xl mx-auto">
           <div className="relative">
@@ -176,38 +198,40 @@ export default function ProductPage() {
 
             <div className="space-y-12">
               {timeline.map((point, index) => (
-                <div key={point.label} className="relative pl-12">
-                  {/* Dot */}
-                  <div
-                    className={[
-                      "absolute left-0 top-1 h-8 w-8 rounded-full border-2 flex items-center justify-center",
-                      index === 0
-                        ? "border-accent bg-accent/10"
-                        : "border-border bg-card",
-                    ].join(" ")}
-                  >
-                    <span
+                <ScrollReveal key={point.label} delay={index * 150}>
+                  <div className="relative pl-12">
+                    {/* Dot */}
+                    <div
                       className={[
-                        "h-2.5 w-2.5 rounded-full",
-                        index === 0 ? "bg-accent" : "bg-warm-400",
+                        "absolute left-0 top-1 h-8 w-8 rounded-full border-2 flex items-center justify-center",
+                        index === 0
+                          ? "border-accent bg-accent/10"
+                          : "border-border bg-card",
                       ].join(" ")}
-                    />
-                  </div>
+                    >
+                      <span
+                        className={[
+                          "h-2.5 w-2.5 rounded-full",
+                          index === 0 ? "bg-accent" : "bg-warm-400",
+                        ].join(" ")}
+                      />
+                    </div>
 
-                  {/* Content */}
-                  <Badge
-                    variant={index === 0 ? "accent" : "muted"}
-                    className="mb-2"
-                  >
-                    {point.label}
-                  </Badge>
-                  <h3 className="font-serif text-xl font-semibold text-foreground tracking-tight mb-2">
-                    {point.title}
-                  </h3>
-                  <p className="text-muted text-sm leading-relaxed">
-                    {point.description}
-                  </p>
-                </div>
+                    {/* Content */}
+                    <Badge
+                      variant={index === 0 ? "accent" : "muted"}
+                      className="mb-2"
+                    >
+                      {point.label}
+                    </Badge>
+                    <h3 className="font-serif text-xl font-semibold text-foreground tracking-tight mb-2">
+                      {point.title}
+                    </h3>
+                    <p className="text-muted text-sm leading-relaxed">
+                      {point.description}
+                    </p>
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -215,18 +239,30 @@ export default function ProductPage() {
       </Section>
 
       {/* ─── CTA ─── */}
-      <Section className="border-t border-border/50">
-        <div className="max-w-3xl mx-auto text-center">
-          <H2 className="mb-4">See it for yourself</H2>
-          <p className="text-muted text-lg mb-8 max-w-xl mx-auto leading-relaxed">
-            The intake takes a few minutes. You&apos;ll walk away with a clear
-            picture of your cultural context and how Dalbit can help.
-          </p>
-          <Button href="/start" size="lg">
-            Start the Intake
-          </Button>
+      <section className="relative overflow-hidden border-t border-border/50">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          aria-hidden="true"
+          style={{
+            background:
+              "radial-gradient(ellipse at 50% 100%, rgba(225,6,0,0.03) 0%, transparent 60%)",
+          }}
+        />
+        <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto text-center">
+              <H2 className="mb-4">See it for yourself</H2>
+              <p className="text-muted text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+                The intake takes a few minutes. You&apos;ll walk away with a clear
+                picture of your cultural context and how Dalbit can help.
+              </p>
+              <Button href="/start" size="lg">
+                Start the Intake
+              </Button>
+            </div>
+          </ScrollReveal>
         </div>
-      </Section>
+      </section>
     </>
   );
 }
