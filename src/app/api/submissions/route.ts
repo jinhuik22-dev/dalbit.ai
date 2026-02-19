@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { insertSubmission, getAllSubmissions, getSubmissionStats } from "@/lib/db";
+import { prisma } from "@/lib/db";
+
 
 /* ── POST /api/submissions — save a trial tool submission ── */
 export async function POST(req: NextRequest) {
