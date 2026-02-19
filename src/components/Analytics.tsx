@@ -1,36 +1,27 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import { track } from "@/lib/analytics";
 
 /**
- * Analytics placeholder component.
- * Replace the trackPageView / trackEvent implementations
- * with your real analytics provider (Plausible, PostHog, GA4, etc.).
+ * Client-side analytics component.
+ * Fires a `page_view` event on mount and whenever the route changes.
+ * Renders no UI -- this is a side-effect-only component.
  */
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function trackPageView(url: string, _props?: Record<string, any>) {
-  if (typeof window !== "undefined" && process.env.NODE_ENV === "production") {
-    // TODO: replace with real analytics call
-    console.debug("[analytics] pageview", url);
-  }
-}
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function trackEvent(name: string, props?: Record<string, any>) {
-  if (typeof window !== "undefined" && process.env.NODE_ENV === "production") {
-    // TODO: replace with real analytics call
-    console.debug("[analytics] event", name, props);
-  }
-}
-
 export function Analytics() {
   const pathname = usePathname();
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
-    trackPageView(pathname);
+    // Track the initial page view and subsequent navigations
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      track("page_view", { path: pathname });
+    } else {
+      track("page_view", { path: pathname });
+    }
   }, [pathname]);
 
-  return null; // No UI — this is a side-effect-only component
+  return null;
 }

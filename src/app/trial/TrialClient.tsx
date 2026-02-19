@@ -5,7 +5,7 @@ import { smbTools, creatorTools, type PromptTool } from "@/data/trial-tools";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
-import { trackEvent } from "@/components/Analytics";
+import { track as trackAnalytics } from "@/lib/analytics";
 
 type Track = "smb" | "creator";
 
@@ -37,7 +37,7 @@ export function TrialClient() {
     setSaved(false);
     setCopied(false);
     setErrors({});
-    trackEvent("trial_tool_selected", { toolId: tool.id, track });
+    trackAnalytics("trial_tool_selected", { toolId: tool.id, track });
   }, [track]);
 
   const handleFieldChange = useCallback((name: string, value: string) => {
@@ -71,7 +71,7 @@ export function TrialClient() {
     if (!selectedTool || !validate()) return;
     const result = selectedTool.outputTemplate(formValues);
     setOutput(result);
-    trackEvent("trial_output_generated", { toolId: selectedTool.id, track });
+    trackAnalytics("trial_output_generated", { toolId: selectedTool.id, track });
   }, [selectedTool, formValues, validate, track]);
 
   const copyOutput = useCallback(async () => {
@@ -80,7 +80,7 @@ export function TrialClient() {
       await navigator.clipboard.writeText(output);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-      trackEvent("trial_output_copied", { toolId: selectedTool?.id, track });
+      trackAnalytics("trial_output_copied", { toolId: selectedTool?.id ?? null, track });
     } catch {
       // Fallback
       const textarea = document.createElement("textarea");
@@ -110,7 +110,7 @@ export function TrialClient() {
       });
       if (res.ok) {
         setSaved(true);
-        trackEvent("trial_submission_saved", { toolId: selectedTool.id, track });
+        trackAnalytics("trial_submission_saved", { toolId: selectedTool.id, track });
       }
     } catch (err) {
       console.error("Save failed:", err);
@@ -304,7 +304,7 @@ export function TrialClient() {
                     size="sm"
                     onClick={() => {
                       // Email placeholder
-                      trackEvent("trial_email_clicked", { toolId: selectedTool.id });
+                      trackAnalytics("trial_email_clicked", { toolId: selectedTool.id });
                       alert("Email functionality coming soon! For now, copy the output and paste it into your email.");
                     }}
                   >

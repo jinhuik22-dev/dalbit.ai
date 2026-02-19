@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model IntakeSubmission {
+  id              Int      @id @default(autoincrement())
+  createdAt       DateTime @default(now())
+  accessCode      String   @unique
+  refCode         String?
+  role            String
+  industries      String   // JSON array
+  primaryLanguage String
+  otherLanguages  String   // JSON array
+  locationCountry String
+  locationCity    String
+  audience        String
+  tone            String
+  goal            String
+  portfolioUrl    String?
+  challenge       String?
+  rawJson         String   // full JSON of all answers
+}
+
+model InvestorInquiry {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  name      String
+  email     String
+  fund      String?
+  message   String
+}

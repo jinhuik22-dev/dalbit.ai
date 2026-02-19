@@ -1,31 +1,42 @@
 import Link from "next/link";
 
+const NAV_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/product", label: "Product" },
+  { href: "/solutions", label: "Solutions" },
+  { href: "/investors", label: "Investors" },
+  { href: "/about", label: "About" },
+] as const;
+
 export function Footer() {
   return (
-    <footer className="border-t border-border/50 bg-surface" role="contentinfo">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-warm-900 text-warm-300" role="contentinfo">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+          {/* Column 1: Logo + Tagline */}
           <div>
-            <Link href="/" className="text-lg font-bold text-foreground">
-              dalbit<span className="text-accent">.</span>ai
+            <Link
+              href="/"
+              className="font-serif text-xl font-bold text-white transition-colors hover:text-accent-light"
+            >
+              Dalbit
             </Link>
-            <p className="mt-3 text-sm text-muted max-w-xs">
-              AI-powered growth systems for modern brands and creators.
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-warm-400">
+              Cultural intelligence for the global creative economy.
             </p>
           </div>
 
+          {/* Column 2: Navigation */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-3">Navigate</h4>
-            <ul className="space-y-2">
-              {[
-                { href: "/about", label: "About" },
-                { href: "/services", label: "Services" },
-                { href: "/trial", label: "Trial Tools" },
-              ].map(({ href, label }) => (
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-warm-500">
+              Navigate
+            </h4>
+            <ul className="mt-4 space-y-3">
+              {NAV_LINKS.map(({ href, label }) => (
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-sm text-muted hover:text-accent transition-colors"
+                    className="text-sm text-warm-400 transition-colors hover:text-white"
                   >
                     {label}
                   </Link>
@@ -34,17 +45,29 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Column 3: Contact */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-3">Contact</h4>
-            <ul className="space-y-2 text-sm text-muted">
-              <li>hello@dalbit.ai</li>
-              <li>Book a call &rarr;</li>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-warm-500">
+              Contact
+            </h4>
+            <ul className="mt-4 space-y-3">
+              <li>
+                <a
+                  href="mailto:hello@dalbit.ai"
+                  className="text-sm text-warm-400 transition-colors hover:text-white"
+                >
+                  hello@dalbit.ai
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-border/50 text-center text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} Dalbit. All rights reserved.
+        {/* Bottom copyright */}
+        <div className="mt-14 border-t border-warm-800 pt-8 text-center">
+          <p className="text-xs text-warm-500">
+            &copy; {new Date().getFullYear()} Dalbit. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

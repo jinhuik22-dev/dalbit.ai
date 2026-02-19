@@ -1,32 +1,41 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Analytics } from "@/components/Analytics";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fraunces = Fraunces({
   subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Dalbit — AI-Powered Growth for Modern Brands",
+    default: "Dalbit \u2014 Cultural Intelligence for Global Creators",
     template: "%s | Dalbit",
   },
   description:
-    "Dalbit helps brands and creators build AI-powered growth systems that scale. Audit, automate, and accelerate your marketing.",
-  keywords: ["AI marketing", "growth systems", "creator economy", "brand automation", "dalbit"],
+    "Dalbit is a cultural intelligence platform that empowers global creators and brands to navigate cross-cultural markets with data-driven insights and localized strategy.",
+  keywords: [
+    "cultural intelligence",
+    "global creators",
+    "cross-cultural marketing",
+    "creator economy",
+    "localization",
+    "dalbit",
+  ],
   openGraph: {
-    title: "Dalbit — AI-Powered Growth for Modern Brands",
+    title: "Dalbit \u2014 Cultural Intelligence for Global Creators",
     description:
-      "Dalbit helps brands and creators build AI-powered growth systems that scale.",
+      "Empowering global creators and brands with cultural intelligence to scale across markets.",
     url: "https://dalbit.ai",
     siteName: "Dalbit",
     locale: "en_US",
@@ -34,9 +43,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dalbit — AI-Powered Growth for Modern Brands",
+    title: "Dalbit \u2014 Cultural Intelligence for Global Creators",
     description:
-      "Dalbit helps brands and creators build AI-powered growth systems that scale.",
+      "Empowering global creators and brands with cultural intelligence to scale across markets.",
   },
   robots: {
     index: true,
@@ -50,10 +59,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
-      >
+    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
+      <body className="font-sans antialiased min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

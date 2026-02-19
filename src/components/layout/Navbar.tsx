@@ -2,68 +2,107 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { Button } from "@/components/ui/Button";
+import { useState, useEffect, useCallback } from "react";
 
-const links = [
+const NAV_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/product", label: "Product" },
+  { href: "/solutions", label: "Solutions" },
+  { href: "/investors", label: "Investors" },
   { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/trial", label: "Trial Tools" },
-];
+] as const;
 
 export function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
+  // Close mobile menu on Escape key
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === "Escape") setMobileOpen(false);
+  }, []);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      document.addEventListener("keydown", handleKeyDown);
+      return () => document.removeEventListener("keydown", handleKeyDown);
+    }
+  }, [mobileOpen, handleKeyDown]);
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
   return (
     <nav
-      className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl"
+      className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md"
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          {/* Logo */}
           <Link
             href="/"
-            className="text-xl font-bold text-foreground hover:text-accent transition-colors"
+            className="font-serif text-xl font-bold tracking-tight text-foreground transition-colors hover:text-accent"
           >
-            dalbit<span className="text-accent">.</span>ai
+            Dalbit
           </Link>
 
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-1">
-            {links.map(({ href, label }) => (
+          {/* Desktop navigation */}
+          <div className="hidden items-center gap-1 md:flex">
+            {NAV_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  pathname === href
-                    ? "text-accent bg-accent/10"
-                    : "text-muted hover:text-foreground hover:bg-card"
+                className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
+                  isActive(href)
+                    ? "bg-accent/10 text-accent"
+                    : "text-muted hover:bg-card hover:text-foreground"
                 }`}
               >
                 {label}
               </Link>
             ))}
-            <div className="ml-4">
-              <Button href="/trial" size="sm">
-                Try Free Tools
-              </Button>
-            </div>
+
+            <Link
+              href="/start"
+              className="ml-4 inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white transition-all hover:bg-accent-light"
+            >
+              Start the Intake
+            </Link>
           </div>
 
-          {/* Mobile hamburger */}
+          {/* Mobile hamburger button */}
           <button
-            className="md:hidden p-2 text-muted hover:text-foreground"
-            onClick={() => setMobileOpen(!mobileOpen)}
+            type="button"
+            className="inline-flex items-center justify-center rounded-lg p-2 text-muted transition-colors hover:bg-card hover:text-foreground md:hidden"
+            onClick={() => setMobileOpen((prev) => !prev)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
           >
             <svg
-              className="w-6 h-6"
+              className="h-6 w-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               {mobileOpen ? (
                 <path
@@ -83,31 +122,41 @@ export function Navbar() {
             </svg>
           </button>
         </div>
+      </div>
 
-        {/* Mobile menu */}
-        {mobileOpen && (
-          <div className="md:hidden pb-4 space-y-1">
-            {links.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                onClick={() => setMobileOpen(false)}
-                className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                  pathname === href
-                    ? "text-accent bg-accent/10"
-                    : "text-muted hover:text-foreground hover:bg-card"
-                }`}
-              >
-                {label}
-              </Link>
-            ))}
-            <div className="pt-2 px-4">
-              <Button href="/trial" size="sm" className="w-full">
-                Try Free Tools
-              </Button>
-            </div>
+      {/* Mobile menu */}
+      <div
+        id="mobile-menu"
+        className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
+          mobileOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+        aria-hidden={!mobileOpen}
+      >
+        <div className="space-y-1 px-4 pb-4 pt-2">
+          {NAV_LINKS.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={() => setMobileOpen(false)}
+              className={`block rounded-lg px-4 py-2.5 text-sm font-medium transition-colors ${
+                isActive(href)
+                  ? "bg-accent/10 text-accent"
+                  : "text-muted hover:bg-card hover:text-foreground"
+              }`}
+            >
+              {label}
+            </Link>
+          ))}
+          <div className="px-4 pt-3">
+            <Link
+              href="/start"
+              onClick={() => setMobileOpen(false)}
+              className="block w-full rounded-lg bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-all hover:bg-accent-light"
+            >
+              Start the Intake
+            </Link>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
