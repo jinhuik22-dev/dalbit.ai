@@ -66,9 +66,11 @@ export function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-lg font-semibold tracking-tight text-foreground transition-colors hover:text-accent"
+            className={`font-semibold tracking-tight text-foreground transition-colors hover:text-accent ${
+              pathname === "/" ? "text-5xl leading-none" : "text-lg"
+            }`}
           >
-            Dalbit
+            dalbit
           </Link>
 
           {/* Desktop navigation */}
