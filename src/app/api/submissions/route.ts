@@ -2,9 +2,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 
-// NOTE:
-// Update `prisma.submission` if your Prisma model is not `Submission`.
-// Example: model TrialSubmission => prisma.trialSubmission
+// Prisma models in your schema:
+// - model IntakeSubmission  => prisma.intakeSubmission
+// - model InvestorInquiry   => prisma.investorInquiry
+//
+// This route uses IntakeSubmission.
 
 export async function POST(req: NextRequest) {
   try {
@@ -17,11 +19,14 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const created = await prisma.submission.create({
-      data: body,
+    const created = await prisma.intakeSubmission.create({
+      data: body as any,
     });
 
-    return NextResponse.json({ ok: true, submission: created }, { status: 201 });
+    return NextResponse.json(
+      { ok: true, submission: created },
+      { status: 201 }
+    );
   } catch (error: any) {
     console.error("POST /api/submissions error:", error);
     return NextResponse.json(
@@ -33,11 +38,12 @@ export async function POST(req: NextRequest) {
 
 export async function GET() {
   try {
-    const submissions = await prisma.submission.findMany({
+    // If your model doesn't have createdAt, remove orderBy.
+    const submissions = await prisma.intakeSubmission.findMany({
       orderBy: { createdAt: "desc" },
     });
 
-    const total = await prisma.submission.count();
+    const total = await prisma.intakeSubmission.count();
 
     return NextResponse.json({ ok: true, total, submissions });
   } catch (error: any) {
