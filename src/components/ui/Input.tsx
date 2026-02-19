@@ -10,7 +10,7 @@ import {
 
 const fieldBase = [
   "w-full px-4 py-2.5 rounded-lg",
-  "bg-white border border-border text-foreground",
+  "bg-surface border border-border text-foreground",
   "placeholder:text-muted-foreground",
   "focus:border-accent focus:ring-1 focus:ring-accent",
   "outline-none transition-colors duration-200",

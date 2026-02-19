@@ -59,7 +59,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
+    <html lang="en" className={`dark ${inter.variable} ${fraunces.variable}`}>
       <body className="font-sans antialiased min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>

@@ -815,7 +815,7 @@ function IntakeChatInner() {
               value={textValue}
               onChange={(e) => setTextValue(e.target.value)}
               placeholder={currentStep.placeholder}
-              className="flex-1 px-4 py-2.5 rounded-lg bg-white border border-border text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-sm"
+              className="flex-1 px-4 py-2.5 rounded-lg bg-surface border border-border text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-sm"
             />
             <Button
               size="sm"
@@ -854,7 +854,7 @@ function IntakeChatInner() {
                   value={textValue}
                   onChange={(e) => setTextValue(e.target.value)}
                   placeholder={currentStep.placeholder}
-                  className="w-full px-4 py-2.5 rounded-lg bg-white border border-border text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-sm"
+                  className="w-full px-4 py-2.5 rounded-lg bg-surface border border-border text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-sm"
                 />
               </div>
               <div className="flex-1">
@@ -864,7 +864,7 @@ function IntakeChatInner() {
                   value={textValueSecond}
                   onChange={(e) => setTextValueSecond(e.target.value)}
                   placeholder={currentStep.placeholderSecond}
-                  className="w-full px-4 py-2.5 rounded-lg bg-white border border-border text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-sm"
+                  className="w-full px-4 py-2.5 rounded-lg bg-surface border border-border text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-sm"
                 />
               </div>
             </div>
@@ -897,7 +897,7 @@ function IntakeChatInner() {
               onChange={(e) => setTextValue(e.target.value)}
               placeholder={currentStep.placeholder}
               rows={3}
-              className="w-full px-4 py-2.5 rounded-lg bg-white border border-border text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors resize-y text-sm min-h-[80px]"
+              className="w-full px-4 py-2.5 rounded-lg bg-surface border border-border text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors resize-y text-sm min-h-[80px]"
             />
             <div className="flex gap-2">
               <Button
