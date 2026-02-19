@@ -3,33 +3,26 @@ import { prisma } from "@/lib/db";
 
 
 /* ── POST /api/submissions — save a trial tool submission ── */
+import { NextRequest, NextResponse } from "next/server";
+import { prisma } from "@/lib/db"; // or: import prisma from "@/lib/db";
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { toolId, persona, formData, output } = body;
 
-    if (!toolId || !persona || !formData || !output) {
-      return NextResponse.json(
-        { error: "Missing required fields: toolId, persona, formData, output" },
-        { status: 400 }
-      );
-    }
+    const created = await prisma.submission.create({
+      data: body,
+    });
 
-    if (!formData.email) {
-      return NextResponse.json(
-        { error: "Email is required" },
-        { status: 400 }
-      );
-    }
-
-    // Basic email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      return NextResponse.json(
-        { error: "Invalid email format" },
-        { status: 400 }
-      );
-    }
+    return NextResponse.json({ ok: true, submission: created }, { status: 201 });
+  } catch (err: any) {
+    console.error(err);
+    return NextResponse.json(
+      { ok: false, error: err?.message ?? "Failed to create submission" },
+      { status: 500 }
+    );
+  }
+}
 
     // Basic spam protection: honeypot check
     if (formData._hp) {
