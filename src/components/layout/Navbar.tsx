@@ -54,20 +54,22 @@ export function Navbar() {
   return (
     <nav
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "border-b border-border bg-background/90 backdrop-blur-xl"
-          : "border-b border-transparent bg-background/0 backdrop-blur-none"
-      }`}
+        pathname === "/"
+          ? "border-b border-border bg-card/95 backdrop-blur-xl shadow-warm"
+          : scrolled
+            ? "border-b border-border bg-background/90 backdrop-blur-xl"
+            : "border-b border-transparent bg-background/0 backdrop-blur-none"
+      } ${pathname === "/" ? "pt-2" : ""}`}
       role="navigation"
       aria-label="Main navigation"
     >
       <div className={pathname === "/" ? "w-full px-4 sm:px-6 lg:px-8" : "mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"}>
-        <div className="flex h-14 items-center justify-between">
+        <div className={`flex items-center justify-between ${pathname === "/" ? "h-20" : "h-14"}`}>
           {/* Logo */}
           <Link
             href="/"
             className={`font-semibold tracking-tight text-foreground transition-colors hover:text-accent ${
-              pathname === "/" ? "text-5xl leading-none" : "text-lg"
+              pathname === "/" ? "text-5xl leading-tight" : "text-lg"
             }`}
           >
             dalbit
