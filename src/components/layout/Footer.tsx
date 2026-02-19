@@ -1,16 +1,15 @@
 import Link from "next/link";
 
 const NAV_LINKS = [
-  { href: "/", label: "Home" },
   { href: "/product", label: "Product" },
-  { href: "/solutions", label: "Solutions" },
-  { href: "/investors", label: "Investors" },
+  { href: "/services", label: "Services" },
+  { href: "/#pricing", label: "Pricing" },
   { href: "/about", label: "About" },
 ] as const;
 
 export function Footer() {
   return (
-    <footer className="relative bg-warm-900 text-warm-300" role="contentinfo">
+    <footer className="relative bg-warm-800 text-warm-300" role="contentinfo">
       {/* Soft gradient transition from page content */}
       <div
         className="absolute -top-px left-0 right-0 h-24 pointer-events-none"
@@ -27,12 +26,12 @@ export function Footer() {
           <div>
             <Link
               href="/"
-              className="font-serif text-xl font-bold text-white transition-colors hover:text-accent"
+              className="text-xl font-semibold tracking-tight text-white transition-colors hover:text-warm-300"
             >
               Dalbit
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-warm-400">
-              Cultural intelligence for the global creative economy.
+              Cultural intelligence for cross-border creative teams.
             </p>
           </div>
 
@@ -46,7 +45,7 @@ export function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-sm text-warm-400 transition-colors hover:text-white"
+                    className="text-sm text-warm-400 transition-colors hover:text-warm-200"
                   >
                     {label}
                   </Link>
@@ -64,7 +63,7 @@ export function Footer() {
               <li>
                 <a
                   href="mailto:hello@dalbit.ai"
-                  className="text-sm text-warm-400 transition-colors hover:text-white"
+                  className="text-sm text-warm-400 transition-colors hover:text-warm-200"
                 >
                   hello@dalbit.ai
                 </a>

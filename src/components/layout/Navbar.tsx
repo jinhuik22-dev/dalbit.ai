@@ -5,10 +5,9 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect, useCallback } from "react";
 
 const NAV_LINKS = [
-  { href: "/", label: "Home" },
   { href: "/product", label: "Product" },
-  { href: "/solutions", label: "Solutions" },
-  { href: "/investors", label: "Investors" },
+  { href: "/services", label: "Services" },
+  { href: "/#pricing", label: "Pricing" },
   { href: "/about", label: "About" },
 ] as const;
 
@@ -24,11 +23,6 @@ export function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -61,18 +55,18 @@ export function Navbar() {
     <nav
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-border bg-background/80 backdrop-blur-xl shadow-warm"
+          ? "border-b border-border bg-background/90 backdrop-blur-xl"
           : "border-b border-transparent bg-background/0 backdrop-blur-none"
       }`}
       role="navigation"
       aria-label="Main navigation"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-14 items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="font-serif text-xl font-bold tracking-tight text-foreground transition-colors hover:text-accent"
+            className="text-lg font-semibold tracking-tight text-foreground transition-colors hover:text-accent"
           >
             Dalbit
           </Link>
@@ -83,16 +77,11 @@ export function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className={`relative rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${
-                  isActive(href)
-                    ? "text-accent"
-                    : "text-muted hover:text-foreground"
+                className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                  isActive(href) ? "text-foreground" : "text-muted hover:text-foreground"
                 }`}
               >
                 {label}
-                {isActive(href) && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-4 rounded-full bg-accent" />
-                )}
               </Link>
             ))}
 
@@ -100,7 +89,7 @@ export function Navbar() {
               href="/start"
               className="ml-4 inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-warm-md hover:-translate-y-0.5"
             >
-              Start the Intake
+              Get started
             </Link>
           </div>
 
@@ -171,7 +160,7 @@ export function Navbar() {
               onClick={() => setMobileOpen(false)}
               className="block w-full rounded-lg bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-all hover:bg-accent-hover"
             >
-              Start the Intake
+              Get started
             </Link>
           </div>
         </div>
