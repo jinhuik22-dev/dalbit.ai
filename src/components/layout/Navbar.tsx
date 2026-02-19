@@ -87,7 +87,7 @@ export function Navbar() {
 
             <Link
               href="/start"
-              className="ml-4 inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2 text-sm font-medium text-warm-900 transition-all duration-200 hover:bg-accent-hover hover:shadow-warm-md hover:-translate-y-0.5"
+              className="ml-4 inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-warm-md hover:-translate-y-0.5"
             >
               Get started
             </Link>
@@ -158,7 +158,7 @@ export function Navbar() {
             <Link
               href="/start"
               onClick={() => setMobileOpen(false)}
-              className="block w-full rounded-lg bg-accent px-5 py-2.5 text-center text-sm font-medium text-warm-900 transition-all hover:bg-accent-hover"
+              className="block w-full rounded-lg bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-all hover:bg-accent-hover"
             >
               Get started
             </Link>

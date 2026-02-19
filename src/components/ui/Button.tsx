@@ -6,13 +6,13 @@ type Size = "sm" | "md" | "lg";
 
 const variantStyles: Record<Variant, string> = {
   primary:
-    "bg-accent text-warm-900 hover:bg-accent-hover active:bg-accent-dark shadow-warm hover:shadow-warm-md hover:-translate-y-0.5",
+    "bg-accent text-white hover:bg-accent-hover active:bg-accent-dark shadow-warm hover:shadow-warm-md hover:-translate-y-0.5",
   secondary:
     "bg-surface text-foreground border border-border hover:border-warm-400 hover:bg-warm-200 active:bg-warm-300 hover:-translate-y-0.5",
   ghost:
     "text-muted hover:text-foreground hover:bg-surface active:bg-warm-200",
   outline:
-    "border border-accent text-accent hover:bg-accent hover:text-warm-900 active:bg-accent-dark hover:-translate-y-0.5",
+    "border border-accent text-accent hover:bg-accent hover:text-white active:bg-accent-dark hover:-translate-y-0.5",
 };
 
 const sizeStyles: Record<Size, string> = {

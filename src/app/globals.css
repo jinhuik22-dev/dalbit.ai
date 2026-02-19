@@ -1,36 +1,36 @@
 @import "tailwindcss";
 
-/* Dalbit system: cosmic dark + neon gold accent */
+/* Dalbit system: YC-style light startup theme */
 @theme inline {
-  --color-background: #06070d;
-  --color-foreground: #f7f4e6;
+  --color-background: #fbfbf9;
+  --color-foreground: #171717;
 
-  --color-muted: #b2ac8f;
-  --color-muted-foreground: #b2ac8f;
+  --color-muted: #6b6b6b;
+  --color-muted-foreground: #6b6b6b;
 
-  --color-card: #0f1320;
-  --color-card-hover: rgba(247, 244, 230, 0.04);
+  --color-card: #ffffff;
+  --color-card-hover: rgba(23, 23, 23, 0.03);
 
-  --color-border: rgba(247, 244, 230, 0.14);
-  --color-border-light: rgba(247, 244, 230, 0.22);
+  --color-border: rgba(23, 23, 23, 0.12);
+  --color-border-light: rgba(23, 23, 23, 0.18);
 
-  --color-accent: #f5d23c;
-  --color-accent-light: rgba(245, 210, 60, 0.2);
-  --color-accent-dark: #b79200;
-  --color-accent-hover: #ffe46a;
+  --color-accent: #ff5f1f;
+  --color-accent-light: rgba(255, 95, 31, 0.14);
+  --color-accent-dark: #d84b12;
+  --color-accent-hover: #ff7136;
 
-  --color-surface: rgba(247, 244, 230, 0.03);
+  --color-surface: rgba(23, 23, 23, 0.02);
 
-  --color-warm-50: #fff9de;
-  --color-warm-100: #f6ebbc;
-  --color-warm-200: #e7d88f;
-  --color-warm-300: #d1bf62;
-  --color-warm-400: #b49f3f;
-  --color-warm-500: #8f7d25;
-  --color-warm-600: #6f5f17;
-  --color-warm-700: #4f430f;
-  --color-warm-800: #241f0b;
-  --color-warm-900: #131005;
+  --color-warm-50: #fff8f4;
+  --color-warm-100: #fff1e8;
+  --color-warm-200: #ffe0cd;
+  --color-warm-300: #ffc6a6;
+  --color-warm-400: #ff9f72;
+  --color-warm-500: #ff7c45;
+  --color-warm-600: #d85b27;
+  --color-warm-700: #a8431a;
+  --color-warm-800: #6e2d12;
+  --color-warm-900: #3a1708;
 
   --font-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
   --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
@@ -58,15 +58,15 @@ body {
 
 /* Clean "museum" shadows (subtle) */
 .shadow-warm {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.45), 0 8px 22px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 2px rgba(23, 23, 23, 0.06), 0 8px 22px rgba(23, 23, 23, 0.05);
 }
 
 .shadow-warm-md {
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 18px 42px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 6px rgba(23, 23, 23, 0.08), 0 18px 42px rgba(23, 23, 23, 0.07);
 }
 
 .shadow-warm-lg {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.55), 0 28px 66px rgba(0, 0, 0, 0.44);
+  box-shadow: 0 4px 12px rgba(23, 23, 23, 0.1), 0 28px 66px rgba(23, 23, 23, 0.08);
 }
 
 /* Remove glow effects (keep class names so existing components don't break) */
@@ -85,18 +85,18 @@ body {
 /* Hero gradient — more dramatic for visual impact */
 .gradient-hero {
   background:
-    radial-gradient(ellipse at 18% 6%, rgba(245, 210, 60, 0.18) 0%, transparent 52%),
-    radial-gradient(ellipse at 82% 80%, rgba(84, 68, 20, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 18% 6%, rgba(255, 95, 31, 0.1) 0%, transparent 52%),
+    radial-gradient(ellipse at 82% 80%, rgba(255, 113, 54, 0.08) 0%, transparent 50%),
     var(--color-background);
 }
 
 /* Section backgrounds */
 .gradient-section {
-  background: linear-gradient(180deg, rgba(245, 210, 60, 0.05) 0%, var(--color-background) 100%);
+  background: linear-gradient(180deg, rgba(255, 95, 31, 0.04) 0%, var(--color-background) 100%);
 }
 
 .gradient-warm {
-  background: linear-gradient(180deg, rgba(245, 210, 60, 0.06) 0%, var(--color-background) 100%);
+  background: linear-gradient(180deg, rgba(255, 95, 31, 0.05) 0%, var(--color-background) 100%);
 }
 
 /* Chat animations (kept) */
@@ -195,15 +195,15 @@ body {
   background: var(--color-background);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(245, 210, 60, 0.42);
+  background: rgba(255, 95, 31, 0.34);
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 228, 106, 0.58);
+  background: rgba(255, 95, 31, 0.5);
 }
 
 /* Selection color */
 ::selection {
-  background: rgba(245, 210, 60, 0.32);
+  background: rgba(255, 95, 31, 0.22);
   color: var(--color-foreground);
 }
