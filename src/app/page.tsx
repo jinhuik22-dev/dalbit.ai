@@ -88,11 +88,11 @@ export default function HomePage() {
           </ScrollReveal>
           <ScrollReveal delay={100}>
             <h1 className="mx-auto max-w-4xl font-serif text-5xl font-bold tracking-tight text-foreground md:text-7xl md:leading-[1.04]">
-              Culture first
+              Culture first.
               <br />
-              Powered by language
+              Powered by language.
               <br />
-              Strategy always
+              Strategy always.
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={180}>
