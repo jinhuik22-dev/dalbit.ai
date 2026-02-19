@@ -8,7 +8,7 @@ interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
 export function H1({ children, className = "", ...props }: HeadingProps) {
   return (
     <h1
-      className={`font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.1] ${className}`}
+      className={`font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tighter leading-[1.05] ${className}`}
       {...props}
     >
       {children}
@@ -19,7 +19,7 @@ export function H1({ children, className = "", ...props }: HeadingProps) {
 export function H2({ children, className = "", ...props }: HeadingProps) {
   return (
     <h2
-      className={`font-serif text-3xl md:text-4xl font-semibold text-foreground tracking-tight leading-tight ${className}`}
+      className={`font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.1] ${className}`}
       {...props}
     >
       {children}

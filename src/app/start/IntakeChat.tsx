@@ -267,11 +267,28 @@ function ChatBubble({ message }: { message: ChatMessage }) {
 function IntakeChatInner() {
   const searchParams = useSearchParams();
   const refCode = searchParams.get("ref") || "";
+  const prefilledRole = searchParams.get("role") || "";
+
+  // Check if a valid role was passed from the homepage chat teaser
+  const validRoles = STEPS[0].options ?? [];
+  const hasPrefilledRole =
+    prefilledRole !== "" && validRoles.includes(prefilledRole);
 
   /* ── State ── */
-  const [stepIndex, setStepIndex] = useState(0);
-  const [answers, setAnswers] = useState<IntakeAnswers>(emptyAnswers);
-  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [stepIndex, setStepIndex] = useState(hasPrefilledRole ? 1 : 0);
+  const [answers, setAnswers] = useState<IntakeAnswers>(() => {
+    const base = emptyAnswers();
+    if (hasPrefilledRole) base.role = prefilledRole;
+    return base;
+  });
+  const [messages, setMessages] = useState<ChatMessage[]>(() => {
+    if (!hasPrefilledRole) return [];
+    // Pre-fill the welcome message + user's role answer
+    return [
+      { id: nextId(), sender: "dalbit", text: STEPS[0].dalbitMessage },
+      { id: nextId(), sender: "user", text: prefilledRole },
+    ];
+  });
   const [isTyping, setIsTyping] = useState(true);
   const [showInput, setShowInput] = useState(false);
 
