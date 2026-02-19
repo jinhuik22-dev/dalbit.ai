@@ -61,7 +61,7 @@ export function Navbar() {
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className={pathname === "/" ? "w-full px-4 sm:px-6 lg:px-8" : "mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"}>
         <div className="flex h-14 items-center justify-between">
           {/* Logo */}
           <Link

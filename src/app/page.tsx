@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { HomeChatTeaser } from "@/components/HomeChatTeaser";
 
 export const metadata: Metadata = {
   title: "Dalbit | Cultural Intelligence Platform",
@@ -79,68 +80,58 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden border-b border-border/70 bg-background">
-        <div className="relative mx-auto grid max-w-6xl gap-10 px-6 pb-20 pt-20 md:grid-cols-[1.2fr_1fr] md:pt-24">
+        <div className="mx-auto max-w-5xl px-6 pb-20 pt-24 text-center md:pt-32">
           <ScrollReveal>
-            <div>
-              <Badge variant="outline" className="mb-5">
-                For creators, brands, and agencies
-              </Badge>
-              <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-[3.4rem] md:leading-[1.04]">
-                Run global campaigns with context.
-              </h1>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-                Dalbit helps teams launch across markets with fewer misfires and faster approvals.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button href="/start" size="lg">
-                  Get started
-                </Button>
-                <Button href="/#pricing" variant="secondary" size="lg">
-                  View pricing
-                </Button>
-              </div>
-              <div className="mt-12 grid max-w-xl grid-cols-3 gap-4 border-t border-border pt-6 text-sm">
-                <div>
-                  <p className="text-2xl font-semibold text-foreground">25+</p>
-                  <p className="text-muted">Markets mapped</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-semibold text-foreground">3x</p>
-                  <p className="text-muted">Faster revision cycles</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-semibold text-foreground">24h</p>
-                  <p className="text-muted">Average setup</p>
-                </div>
-              </div>
-            </div>
+            <Badge variant="outline" className="mb-8">
+              Now in early access
+            </Badge>
           </ScrollReveal>
-
-          <ScrollReveal delay={120}>
-            <div className="rounded-2xl border border-border bg-card p-6">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted">
-                Workspace preview
-              </p>
-              <div className="mt-5 space-y-3 text-sm">
-                <div className="rounded-lg border border-border bg-background p-3">
-                  <p className="text-muted">Campaign</p>
-                  <p className="font-medium text-foreground">US beauty brand x KR creator launch</p>
-                </div>
-                <div className="rounded-lg border border-border bg-background p-3">
-                  <p className="text-muted">Cultural risk check</p>
-                  <p className="font-medium text-foreground">2 tone mismatches flagged before publishing</p>
-                </div>
-                <div className="rounded-lg border border-border bg-background p-3">
-                  <p className="text-muted">Workflow status</p>
-                  <p className="font-medium text-foreground">Brief aligned, creator matched, assets in review</p>
-                </div>
-              </div>
+          <ScrollReveal delay={100}>
+            <h1 className="mx-auto max-w-4xl font-serif text-5xl font-bold tracking-tight text-foreground md:text-7xl md:leading-[1.04]">
+              Culture First. Powered by Language. Strategy Always.
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal delay={180}>
+            <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-muted">
+              Dalbit AI empowers global creators and brands to communicate with precision and grow across markets with confidence.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={260}>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+              <Button href="/start" size="lg">
+                Get started
+              </Button>
+              <Button href="/product" variant="ghost" size="lg">
+                See how it works
+              </Button>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
+      <section className="mx-auto max-w-5xl px-6 py-14 md:py-20">
+        <ScrollReveal>
+          <HomeChatTeaser />
+        </ScrollReveal>
+      </section>
+
       <section className="mx-auto max-w-6xl px-6 py-24">
+        <div className="grid gap-4 border-t border-border pt-8 text-sm md:grid-cols-3">
+          <div>
+            <p className="text-2xl font-semibold text-foreground">25+</p>
+            <p className="text-muted">Markets mapped</p>
+          </div>
+          <div>
+            <p className="text-2xl font-semibold text-foreground">3x</p>
+            <p className="text-muted">Faster revision cycles</p>
+          </div>
+          <div>
+            <p className="text-2xl font-semibold text-foreground">24h</p>
+            <p className="text-muted">Average setup</p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-6xl px-6 pb-24">
         <ScrollReveal>
           <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
             <div>
