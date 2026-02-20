@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/Button";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "BetweeN by dalbit | Portfolio First",
+  title: "BETWEEN by dalbit | Portfolio First",
   description:
-    "BetweeN by dalbit is a portfolio-first platform for cross-cultural matching: intake, premium profile, match, and chat.",
+    "BETWEEN by dalbit is a portfolio-first platform for cross-cultural matching: intake, premium profile, match, and chat in BETWEEN Trial Mode.",
 };
 
 const GALLERY_NOTES = [
@@ -95,16 +95,16 @@ export default function HomePage() {
           </ScrollReveal>
           <ScrollReveal delay={160}>
             <p className="mt-8 max-w-3xl text-xl leading-relaxed text-muted md:text-3xl">
-              Portfolio first. BetweeN Cultures
+              Portfolio first. In between Cultures.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={220}>
             <div className="mt-10 flex flex-wrap gap-3">
               <Button href="/app" size="lg">
-                Access BetweeN
+                Access BETWEEN
               </Button>
               <Button href="/trial" variant="ghost" size="lg">
-                Open Trial Mode
+                Open BETWEEN Trial Mode
               </Button>
             </div>
           </ScrollReveal>
@@ -175,10 +175,10 @@ export default function HomePage() {
           <div className="mb-10 text-left md:max-w-3xl">
             <p className="text-sm font-medium uppercase tracking-[0.14em] text-muted">Plans</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-              Choose how you enter BetweeN
+              Choose how you enter BETWEEN
             </h2>
             <p className="mt-4 text-muted">
-              Every plan keeps portfolio review at the center. Trial mode keeps vanity metrics out of view.
+              Every plan keeps portfolio review at the center. BETWEEN Trial Mode keeps vanity metrics out of view.
             </p>
           </div>
         </ScrollReveal>
@@ -201,7 +201,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl px-6 py-24 text-center">
           <ScrollReveal>
             <h2 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-              Start with BetweeN
+              Start with BETWEEN
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-muted">
               Share your intake and we shape your profile around the work itself, not the audience size behind it.
