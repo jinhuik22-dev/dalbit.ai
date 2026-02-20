@@ -72,7 +72,7 @@ export function Navbar() {
               pathname === "/" ? "text-3xl leading-tight" : "text-lg"
             }`}
           >
-            between
+            dalbit
           </Link>
 
           {/* Desktop navigation */}

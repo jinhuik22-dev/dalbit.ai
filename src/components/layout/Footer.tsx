@@ -17,10 +17,10 @@ export function Footer() {
               href="/"
               className="text-xl font-semibold tracking-tight text-foreground transition-colors hover:text-accent"
             >
-              Between
+              BetweeN
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
-              Portfolio first. Built between cultures.
+              Portfolio first. Built BetweeN cultures.
             </p>
           </div>
 
@@ -61,7 +61,7 @@ export function Footer() {
 
         <div className="mt-14 border-t border-border pt-8 text-center">
           <p className="text-xs text-muted">
-            &copy; {new Date().getFullYear()} Between by Dalbit. All rights reserved.
+            &copy; {new Date().getFullYear()} BetweeN by dalbit. All rights reserved.
           </p>
         </div>
       </div>

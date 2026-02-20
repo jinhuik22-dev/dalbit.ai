@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/Button";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Between by Dalbit | Portfolio First",
+  title: "BetweeN by dalbit | Portfolio First",
   description:
-    "Between by Dalbit is a portfolio-first platform for cross-cultural matching: intake, premium profile, match, and chat.",
+    "BetweeN by dalbit is a portfolio-first platform for cross-cultural matching: intake, premium profile, match, and chat.",
 };
 
 const GALLERY_NOTES = [
@@ -16,7 +16,7 @@ const GALLERY_NOTES = [
   },
   {
     label: "Cultural Layer",
-    title: "Built between markets",
+    title: "Built across markets",
     description: "Creators are presented with context for language and market fit.",
   },
   {
@@ -84,24 +84,24 @@ export default function HomePage() {
       <section className="border-b border-border">
         <div className="mx-auto max-w-6xl px-6 pb-20 pt-24 md:pt-28">
           <ScrollReveal>
-            <p className="text-sm uppercase tracking-[0.18em] text-muted">Between by Dalbit</p>
+            <p className="text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
+              Now in early access
+            </p>
           </ScrollReveal>
           <ScrollReveal delay={90}>
-            <h1 className="mt-6 max-w-4xl font-serif text-5xl font-semibold leading-[1.04] tracking-tight text-foreground md:text-7xl">
-              Portfolio First.
-              <br />
-              Built Between Cultures.
+            <h1 className="mt-6 max-w-5xl font-serif text-5xl font-semibold leading-[1.06] tracking-tight text-foreground md:text-7xl">
+              Connect with cross cultural collaborators today!
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={160}>
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">
-              Between is a gallery-like matching experience for creative work across cultures. Intake to premium profile to match to chat, with portfolio quality as the lead signal.
+            <p className="mt-8 max-w-3xl text-xl leading-relaxed text-muted md:text-3xl">
+              Portfolio first. BetweeN Cultures
             </p>
           </ScrollReveal>
           <ScrollReveal delay={220}>
             <div className="mt-10 flex flex-wrap gap-3">
-              <Button href="/start" size="lg">
-                Start Intake
+              <Button href="/app" size="lg">
+                Access BetweeN
               </Button>
               <Button href="/trial" variant="ghost" size="lg">
                 Open Trial Mode
@@ -175,7 +175,7 @@ export default function HomePage() {
           <div className="mb-10 text-left md:max-w-3xl">
             <p className="text-sm font-medium uppercase tracking-[0.14em] text-muted">Plans</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-              Choose how you enter Between
+              Choose how you enter BetweeN
             </h2>
             <p className="mt-4 text-muted">
               Every plan keeps portfolio review at the center. Trial mode keeps vanity metrics out of view.
@@ -201,7 +201,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl px-6 py-24 text-center">
           <ScrollReveal>
             <h2 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-              Start with Between
+              Start with BetweeN
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-muted">
               Share your intake and we shape your profile around the work itself, not the audience size behind it.

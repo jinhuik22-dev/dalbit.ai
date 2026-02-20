@@ -6,11 +6,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Between by Dalbit \u2014 Portfolio First. Built Between Cultures.",
-    template: "%s | Between by Dalbit",
+    default: "BetweeN by dalbit \u2014 Portfolio First. Built BetweeN Cultures.",
+    template: "%s | BetweeN by dalbit",
   },
   description:
-    "Between by Dalbit is a portfolio-first platform for cross-cultural creative matching: intake, premium profile, match, and chat in trial mode without vanity metrics.",
+    "BetweeN by dalbit is a portfolio-first platform for cross-cultural creative matching: intake, premium profile, match, and chat in trial mode without vanity metrics.",
   keywords: [
     "between by dalbit",
     "portfolio first",
@@ -20,19 +20,19 @@ export const metadata: Metadata = {
     "dalbit",
   ],
   openGraph: {
-    title: "Between by Dalbit \u2014 Portfolio First. Built Between Cultures.",
+    title: "BetweeN by dalbit \u2014 Portfolio First. Built BetweeN Cultures.",
     description:
       "A portfolio-first matching experience for cross-cultural creative work.",
     url: "https://dalbit.ai",
-    siteName: "Between by Dalbit",
+    siteName: "BetweeN by dalbit",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Between by Dalbit \u2014 Portfolio First. Built Between Cultures.",
+    title: "BetweeN by dalbit \u2014 Portfolio First. Built BetweeN Cultures.",
     description:
-      "Portfolio-first cross-cultural matching by Dalbit.",
+      "Portfolio-first cross-cultural matching by dalbit.",
   },
   robots: {
     index: true,
