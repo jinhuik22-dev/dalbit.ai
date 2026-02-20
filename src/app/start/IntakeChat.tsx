@@ -204,12 +204,6 @@ function nextId(): string {
   return `msg-${++msgCounter}`;
 }
 
-function formatUserAnswer(step: StepDef, answers: IntakeAnswers): string {
-  const val = answers[step.answerKey];
-  if (Array.isArray(val)) return val.join(", ");
-  return val as string;
-}
-
 /* ──────────────────────────────────────────────
    Sub-components
    ────────────────────────────────────────────── */
