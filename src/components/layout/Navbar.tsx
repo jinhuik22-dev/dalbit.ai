@@ -5,10 +5,10 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect, useCallback } from "react";
 
 const NAV_LINKS = [
-  { href: "/product", label: "Product" },
-  { href: "/services", label: "Services" },
-  { href: "/#pricing", label: "Pricing" },
-  { href: "/about", label: "About" },
+  { href: "/product", label: "Platform" },
+  { href: "/services", label: "Studio" },
+  { href: "/#pricing", label: "Plans" },
+  { href: "/about", label: "Journal" },
 ] as const;
 
 export function Navbar() {
@@ -55,24 +55,24 @@ export function Navbar() {
     <nav
       className={`sticky top-0 z-50 transition-all duration-300 ${
         pathname === "/"
-          ? "border-b border-border bg-card/95 backdrop-blur-xl shadow-warm"
+          ? "border-b border-border bg-background/95 backdrop-blur-xl"
           : scrolled
             ? "border-b border-border bg-background/90 backdrop-blur-xl"
             : "border-b border-transparent bg-background/0 backdrop-blur-none"
-      } ${pathname === "/" ? "pt-2" : ""}`}
+      } ${pathname === "/" ? "pt-1" : ""}`}
       role="navigation"
       aria-label="Main navigation"
     >
       <div className={pathname === "/" ? "w-full px-4 sm:px-6 lg:px-8" : "mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"}>
-        <div className={`flex items-center justify-between ${pathname === "/" ? "h-20" : "h-14"}`}>
+        <div className={`flex items-center justify-between ${pathname === "/" ? "h-[4.5rem]" : "h-14"}`}>
           {/* Logo */}
           <Link
             href="/"
             className={`font-semibold tracking-tight text-foreground transition-colors hover:text-accent ${
-              pathname === "/" ? "text-5xl leading-tight" : "text-lg"
+              pathname === "/" ? "text-3xl leading-tight" : "text-lg"
             }`}
           >
-            dalbit
+            between
           </Link>
 
           {/* Desktop navigation */}
@@ -91,9 +91,9 @@ export function Navbar() {
 
             <Link
               href="/start"
-              className="ml-4 inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-warm-md hover:-translate-y-0.5"
+              className="ml-4 inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-accent-hover"
             >
-              Get started
+              Intake
             </Link>
           </div>
 
@@ -164,7 +164,7 @@ export function Navbar() {
               onClick={() => setMobileOpen(false)}
               className="block w-full rounded-lg bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-all hover:bg-accent-hover"
             >
-              Get started
+              Intake
             </Link>
           </div>
         </div>

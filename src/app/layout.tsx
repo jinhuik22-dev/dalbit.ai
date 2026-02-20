@@ -6,33 +6,33 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Dalbit \u2014 Cultural Intelligence for Global Creators",
-    template: "%s | Dalbit",
+    default: "Between by Dalbit \u2014 Portfolio First. Built Between Cultures.",
+    template: "%s | Between by Dalbit",
   },
   description:
-    "Dalbit is a cultural intelligence platform that empowers global creators and brands to navigate cross-cultural markets with data-driven insights and localized strategy.",
+    "Between by Dalbit is a portfolio-first platform for cross-cultural creative matching: intake, premium profile, match, and chat in trial mode without vanity metrics.",
   keywords: [
-    "cultural intelligence",
-    "global creators",
-    "cross-cultural marketing",
-    "creator economy",
-    "localization",
+    "between by dalbit",
+    "portfolio first",
+    "cross-cultural creators",
+    "creative matching",
+    "global talent",
     "dalbit",
   ],
   openGraph: {
-    title: "Dalbit \u2014 Cultural Intelligence for Global Creators",
+    title: "Between by Dalbit \u2014 Portfolio First. Built Between Cultures.",
     description:
-      "Empowering global creators and brands with cultural intelligence to scale across markets.",
+      "A portfolio-first matching experience for cross-cultural creative work.",
     url: "https://dalbit.ai",
-    siteName: "Dalbit",
+    siteName: "Between by Dalbit",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dalbit \u2014 Cultural Intelligence for Global Creators",
+    title: "Between by Dalbit \u2014 Portfolio First. Built Between Cultures.",
     description:
-      "Empowering global creators and brands with cultural intelligence to scale across markets.",
+      "Portfolio-first cross-cultural matching by Dalbit.",
   },
   robots: {
     index: true,

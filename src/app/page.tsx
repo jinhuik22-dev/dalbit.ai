@@ -1,158 +1,135 @@
 import type { Metadata } from "next";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { HomeChatTeaser } from "@/components/HomeChatTeaser";
 
 export const metadata: Metadata = {
-  title: "Dalbit | Cultural Intelligence Platform",
+  title: "Between by Dalbit | Portfolio First",
   description:
-    "Dalbit helps teams run cross-border creative work with better context and fewer revisions.",
+    "Between by Dalbit is a portfolio-first platform for cross-cultural matching: intake, premium profile, match, and chat.",
 };
 
-const PRODUCT_PILLARS = [
+const GALLERY_NOTES = [
   {
-    title: "Cultural AI Workspace",
-    description:
-      "Draft localized briefs, adapt tone by market, and catch cultural risks early.",
+    label: "Visual Direction",
+    title: "Portfolio pages before profiles",
+    description: "Work samples lead. Social proof follows later, not first.",
   },
   {
-    title: "Global Talent Matching",
-    description:
-      "Find creators and partners by language, market, niche, and collaboration style.",
+    label: "Cultural Layer",
+    title: "Built between markets",
+    description: "Creators are presented with context for language and market fit.",
   },
   {
-    title: "Cross-Border Workflow",
-    description:
-      "Keep intake, briefs, approvals, and handoff in one clean workflow.",
-  },
-] as const;
-
-const SERVICE_OFFERS = [
-  {
-    title: "Starter Setup",
-    detail: "Onboarding, positioning, and your first campaign setup.",
-  },
-  {
-    title: "Growth Sprints",
-    detail: "Monthly optimization for messaging, channels, and creators.",
-  },
-  {
-    title: "Partner Team",
-    detail: "Dedicated support for teams running high-volume global campaigns.",
+    label: "Trial Rule",
+    title: "No vanity metrics",
+    description: "Follower and like counts stay hidden in trial mode.",
   },
 ] as const;
 
-const PRICING = [
+const FLOW = [
   {
-    name: "Starter",
-    price: "$49",
-    cadence: "/month",
-    description: "For solo creators and small teams testing global demand.",
-    features: ["AI localization prompts", "Basic matching filters", "Email support"],
-    cta: "Choose Starter",
+    step: "Intake",
+    description:
+      "Share project intent, references, and the cultural markets you want to bridge.",
     href: "/start",
-    featured: false,
+    cta: "Begin Intake",
   },
   {
-    name: "Pro",
-    price: "$149",
-    cadence: "/month",
-    description: "For brands and agencies running recurring global campaigns.",
-    features: ["Advanced cultural checks", "Collaboration workflows", "Priority support"],
-    cta: "Choose Pro",
-    href: "/start",
-    featured: true,
+    step: "Premium Profile",
+    description:
+      "We shape a clear, editorial profile around portfolio quality, craft, and direction.",
+    href: "/product",
+    cta: "View Platform",
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    cadence: "",
-    description: "For teams that need custom integrations and dedicated operations.",
-    features: ["Dedicated success manager", "Custom integrations", "SLA + team onboarding"],
-    cta: "Contact sales",
-    href: "/investors",
-    featured: false,
+    step: "Match",
+    description:
+      "Matches are made by portfolio relevance and cross-cultural fit, not popularity rank.",
+    href: "/services",
+    cta: "See Studio",
+  },
+  {
+    step: "Chat",
+    description:
+      "Start direct conversations in trial mode to align voice, references, and scope quickly.",
+    href: "/trial",
+    cta: "Open Trial",
+  },
+] as const;
+
+const PLANS = [
+  {
+    name: "Trial Mode",
+    description: "Portfolio-first exploration with vanity metrics hidden by default.",
+    cta: "Start Trial",
+    href: "/trial",
+  },
+  {
+    name: "Curated Match",
+    description: "Guided matching for teams that need higher signal in early conversations.",
+    cta: "Start Intake",
+    href: "/start",
+  },
+  {
+    name: "Studio Support",
+    description: "Operational support for teams running ongoing cross-cultural projects.",
+    cta: "See Services",
+    href: "/services",
   },
 ] as const;
 
 export default function HomePage() {
   return (
-    <div className="bg-[linear-gradient(180deg,#ffffff_0%,#fffaf6_42%,rgba(255,95,31,0.16)_100%)]">
-      <section className="relative overflow-hidden border-b border-border/70 bg-transparent">
-        <div className="mx-auto max-w-5xl px-6 pb-20 pt-24 text-center md:pt-32">
+    <div className="gradient-hero">
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-6xl px-6 pb-20 pt-24 md:pt-28">
           <ScrollReveal>
-            <Badge variant="outline" className="mb-8">
-              Now in early access
-            </Badge>
+            <p className="text-sm uppercase tracking-[0.18em] text-muted">Between by Dalbit</p>
           </ScrollReveal>
-          <ScrollReveal delay={100}>
-            <h1 className="mx-auto max-w-4xl font-serif text-5xl font-bold tracking-tight text-foreground md:text-7xl md:leading-[1.04]">
-              Culture first.
+          <ScrollReveal delay={90}>
+            <h1 className="mt-6 max-w-4xl font-serif text-5xl font-semibold leading-[1.04] tracking-tight text-foreground md:text-7xl">
+              Portfolio First.
               <br />
-              Powered by language.
-              <br />
-              Strategy always.
+              Built Between Cultures.
             </h1>
           </ScrollReveal>
-          <ScrollReveal delay={180}>
-            <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-muted">
-              Dalbit AI empowers global creators and brands to communicate with precision and grow across markets with confidence.
+          <ScrollReveal delay={160}>
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">
+              Between is a gallery-like matching experience for creative work across cultures. Intake to premium profile to match to chat, with portfolio quality as the lead signal.
             </p>
           </ScrollReveal>
-          <ScrollReveal delay={260}>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <ScrollReveal delay={220}>
+            <div className="mt-10 flex flex-wrap gap-3">
               <Button href="/start" size="lg">
-                Get started
+                Start Intake
               </Button>
-              <Button href="/product" variant="ghost" size="lg">
-                See how it works
+              <Button href="/trial" variant="ghost" size="lg">
+                Open Trial Mode
               </Button>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-6 py-14 md:py-20">
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
         <ScrollReveal>
-          <HomeChatTeaser />
-        </ScrollReveal>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="grid gap-4 border-t border-border pt-8 text-sm md:grid-cols-3">
-          <div>
-            <p className="text-2xl font-semibold text-foreground">25+</p>
-            <p className="text-muted">Markets mapped</p>
-          </div>
-          <div>
-            <p className="text-2xl font-semibold text-foreground">3x</p>
-            <p className="text-muted">Faster revision cycles</p>
-          </div>
-          <div>
-            <p className="text-2xl font-semibold text-foreground">24h</p>
-            <p className="text-muted">Average setup</p>
-          </div>
-        </div>
-      </section>
-      <section className="mx-auto max-w-6xl px-6 pb-24">
-        <ScrollReveal>
-          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-4 border-b border-border pb-6">
             <div>
-              <p className="text-sm font-medium text-muted">Platform</p>
-              <h2 className="mt-2 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-                Core product for cross-border work
+              <p className="text-sm font-medium uppercase tracking-[0.14em] text-muted">Editorial Notes</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+                A minimal gallery for serious creative matching
               </h2>
             </div>
             <Button href="/product" variant="ghost">
-              See product
+              Explore Platform
             </Button>
           </div>
         </ScrollReveal>
         <div className="grid gap-4 md:grid-cols-3">
-          {PRODUCT_PILLARS.map((item, idx) => (
-            <ScrollReveal key={item.title} delay={idx * 90}>
+          {GALLERY_NOTES.map((item, idx) => (
+            <ScrollReveal key={item.title} delay={idx * 80}>
               <article className="h-full rounded-2xl border border-border bg-card p-6">
+                <p className="text-xs uppercase tracking-[0.16em] text-muted">{item.label}</p>
                 <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{item.description}</p>
               </article>
@@ -161,27 +138,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-transparent">
+      <section className="border-y border-border bg-background/60">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <ScrollReveal>
             <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
               <div>
-              <p className="text-sm font-medium text-muted">Services</p>
-              <h2 className="mt-2 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-                Services for execution
-              </h2>
-            </div>
-            <Button href="/services" variant="ghost">
-              See services
-            </Button>
+                <p className="text-sm font-medium uppercase tracking-[0.14em] text-muted">MVP Flow</p>
+                <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+                  Intake to chat, without popularity bias
+                </h2>
+              </div>
+              <Button href="/services" variant="ghost">
+                See Services
+              </Button>
             </div>
           </ScrollReveal>
-          <div className="grid gap-4 md:grid-cols-3">
-            {SERVICE_OFFERS.map((offer, idx) => (
-              <ScrollReveal key={offer.title} delay={idx * 90}>
+          <div className="grid gap-4 md:grid-cols-2">
+            {FLOW.map((item, idx) => (
+              <ScrollReveal key={item.step} delay={idx * 80}>
                 <article className="h-full rounded-2xl border border-border bg-background p-6">
-                  <h3 className="text-lg font-semibold text-foreground">{offer.title}</h3>
-                  <p className="mt-2 text-sm text-muted">{offer.detail}</p>
+                  <p className="text-xs uppercase tracking-[0.16em] text-muted">Step {String(idx + 1).padStart(2, "0")}</p>
+                  <h3 className="mt-2 text-lg font-semibold text-foreground">{item.step}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">{item.description}</p>
+                  <Button href={item.href} variant="ghost" size="sm" className="mt-5">
+                    {item.cta}
+                  </Button>
                 </article>
               </ScrollReveal>
             ))}
@@ -191,38 +172,23 @@ export default function HomePage() {
 
       <section id="pricing" className="mx-auto max-w-6xl px-6 py-24 scroll-mt-24">
         <ScrollReveal>
-          <div className="mb-10 text-center">
-            <p className="text-sm font-medium text-muted">Pricing</p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-              Simple pricing
+          <div className="mb-10 text-left md:max-w-3xl">
+            <p className="text-sm font-medium uppercase tracking-[0.14em] text-muted">Plans</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+              Choose how you enter Between
             </h2>
+            <p className="mt-4 text-muted">
+              Every plan keeps portfolio review at the center. Trial mode keeps vanity metrics out of view.
+            </p>
           </div>
         </ScrollReveal>
         <div className="grid gap-4 md:grid-cols-3">
-          {PRICING.map((plan, idx) => (
-            <ScrollReveal key={plan.name} delay={idx * 90}>
-              <article
-                className={`flex h-full flex-col rounded-2xl border p-6 ${
-                  plan.featured
-                    ? "border-accent bg-accent/5"
-                    : "border-border bg-card"
-                }`}
-              >
+          {PLANS.map((plan, idx) => (
+            <ScrollReveal key={plan.name} delay={idx * 80}>
+              <article className="flex h-full flex-col rounded-2xl border border-border bg-card p-6">
                 <h3 className="text-xl font-semibold text-foreground">{plan.name}</h3>
-                <p className="mt-3 text-3xl font-semibold tracking-tight text-foreground">
-                  {plan.price}
-                  <span className="ml-1 text-base font-normal text-muted">{plan.cadence}</span>
-                </p>
                 <p className="mt-3 text-sm text-muted">{plan.description}</p>
-                <ul className="mt-5 space-y-2 text-sm text-foreground">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Button href={plan.href} className="mt-7 w-full" variant={plan.featured ? "primary" : "secondary"}>
+                <Button href={plan.href} className="mt-7 w-full" variant={idx === 1 ? "primary" : "secondary"}>
                   {plan.cta}
                 </Button>
               </article>
@@ -235,17 +201,17 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl px-6 py-24 text-center">
           <ScrollReveal>
             <h2 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-              Start with Dalbit
+              Start with Between
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-muted">
-              Complete a short intake and get the right plan for your market goals.
+              Share your intake and we shape your profile around the work itself, not the audience size behind it.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Button href="/start" size="lg">
-                Start now
+                Begin Intake
               </Button>
               <Button href="/about" variant="ghost" size="lg">
-                Read our story
+                Read Journal
               </Button>
             </div>
           </ScrollReveal>
