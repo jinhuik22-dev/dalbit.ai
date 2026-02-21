@@ -101,9 +101,9 @@ export default function HomePage() {
       <section id="who-we-serve" className="border-b border-border bg-white scroll-mt-24">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
           <div className="max-w-4xl">
-            <p className="text-sm font-medium uppercase tracking-[0.14em] text-muted">Who are we?</p>
+            <p className="text-sm font-medium uppercase tracking-[0.14em] text-muted">What are we building?</p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-              Dalbit.ai is a cultural intelligence and creative collaboration platform.
+              BETWEEN is Dalbit&apos;s first cultural intelligence and creative collaboration platform.
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
               We help creators, brands, and agencies align across language and culture so global partnerships can grow with clarity.
