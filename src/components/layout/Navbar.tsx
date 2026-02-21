@@ -5,26 +5,15 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect, useCallback } from "react";
 
 const NAV_LINKS = [
-  { href: "/product", label: "Platform" },
-  { href: "/services", label: "Studio" },
-  { href: "/#pricing", label: "Plans" },
-  { href: "/about", label: "Journal" },
+  { href: "/#solutions", label: "Solutions" },
+  { href: "/#who-we-serve", label: "Who We Serve" },
+  { href: "/trial", label: "BETWEEN Trial" },
 ] as const;
 
 export function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
-  // Track scroll position for nav styling
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = "hidden";
@@ -36,7 +25,6 @@ export function Navbar() {
     };
   }, [mobileOpen]);
 
-  // Close mobile menu on Escape key
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === "Escape") setMobileOpen(false);
   }, []);
@@ -48,56 +36,49 @@ export function Navbar() {
     }
   }, [mobileOpen, handleKeyDown]);
 
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const isActive = (href: string) => {
+    if (href.startsWith("/#")) return pathname === "/";
+    return pathname === href || pathname.startsWith(href);
+  };
 
   return (
     <nav
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        pathname === "/"
-          ? "border-b border-border bg-background/95 backdrop-blur-xl"
-          : scrolled
-            ? "border-b border-border bg-background/90 backdrop-blur-xl"
-            : "border-b border-transparent bg-background/0 backdrop-blur-none"
-      } ${pathname === "/" ? "pt-1" : ""}`}
+      className="sticky top-0 z-50 border-b border-border bg-background"
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className={pathname === "/" ? "w-full px-4 sm:px-6 lg:px-8" : "mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"}>
-        <div className={`flex items-center justify-between ${pathname === "/" ? "h-[4.5rem]" : "h-14"}`}>
-          {/* Logo */}
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            className={`font-semibold tracking-tight text-foreground transition-colors hover:text-accent ${
-              pathname === "/" ? "text-3xl leading-tight" : "text-lg"
-            }`}
+            className="text-xl font-semibold tracking-tight text-foreground transition-colors hover:text-accent"
           >
-            dalbit
+            dalbit.ai
           </Link>
 
-          {/* Desktop navigation */}
-          <div className="hidden items-center gap-1 md:flex">
+          <div className="hidden flex-1 items-center justify-center gap-1 md:flex">
             {NAV_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
                   isActive(href) ? "text-foreground" : "text-muted hover:text-foreground"
                 }`}
               >
                 {label}
               </Link>
             ))}
+          </div>
 
+          <div className="hidden md:block">
             <Link
               href="/start"
-              className="ml-4 inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-accent-hover"
+              className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
             >
-              Intake
+              Get Started
             </Link>
           </div>
 
-          {/* Mobile hamburger button */}
           <button
             type="button"
             className="inline-flex items-center justify-center rounded-lg p-2 text-muted transition-colors hover:bg-card hover:text-foreground md:hidden"
@@ -133,13 +114,10 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <div
         id="mobile-menu"
         className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
-          mobileOpen
-            ? "max-h-[400px] opacity-100 bg-background/95 backdrop-blur-xl"
-            : "max-h-0 opacity-0"
+          mobileOpen ? "max-h-[320px] opacity-100 bg-background" : "max-h-0 opacity-0"
         }`}
         aria-hidden={!mobileOpen}
       >
@@ -162,9 +140,9 @@ export function Navbar() {
             <Link
               href="/start"
               onClick={() => setMobileOpen(false)}
-              className="block w-full rounded-lg bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-all hover:bg-accent-hover"
+              className="block w-full rounded-lg bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-accent-hover"
             >
-              Intake
+              Get Started
             </Link>
           </div>
         </div>
