@@ -59,7 +59,7 @@ export default function HomePage() {
             </Button>
             <Link
               href="/trial"
-              className="text-base font-medium text-muted transition-colors hover:text-foreground"
+              className="text-base font-medium text-accent transition-all duration-300 ease-in-out hover:scale-[1.03] hover:text-accent-hover"
             >
               Start BETWEEN Trial
             </Link>
@@ -76,7 +76,7 @@ export default function HomePage() {
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {SOLUTIONS.map((item) => (
-            <article key={item.title} className="rounded-2xl border border-border bg-card p-6">
+            <article key={item.title} className="rounded-2xl border border-border bg-card p-6 transition-all duration-300 ease-in-out hover:border-accent/70 hover:bg-card/90">
               <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{item.description}</p>
             </article>
@@ -94,7 +94,7 @@ export default function HomePage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {AUDIENCES.map((item) => (
-              <article key={item.title} className="rounded-2xl border border-border bg-card p-6">
+              <article key={item.title} className="rounded-2xl border border-border bg-card p-6 transition-all duration-300 ease-in-out hover:border-accent/70 hover:bg-card/90">
                 <h3 className="text-base font-semibold text-foreground">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{item.description}</p>
               </article>

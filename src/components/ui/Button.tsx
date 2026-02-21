@@ -6,13 +6,13 @@ type Size = "sm" | "md" | "lg";
 
 const variantStyles: Record<Variant, string> = {
   primary:
-    "bg-accent text-white hover:bg-accent-hover active:bg-accent-dark shadow-warm hover:shadow-warm-md hover:-translate-y-0.5",
+    "bg-accent text-white hover:bg-accent-hover active:bg-accent-dark shadow-warm hover:shadow-warm-md hover:scale-[1.03] [box-shadow:0_0_20px_rgba(147,51,234,0.35)]",
   secondary:
-    "bg-surface text-foreground border border-border hover:border-warm-400 hover:bg-warm-200 active:bg-warm-300 hover:-translate-y-0.5",
+    "bg-surface text-foreground border border-border hover:border-accent hover:bg-card hover:scale-[1.03]",
   ghost:
-    "text-muted hover:text-foreground hover:bg-surface active:bg-warm-200",
+    "text-muted hover:text-accent hover:bg-surface",
   outline:
-    "border border-accent text-accent hover:bg-accent hover:text-white active:bg-accent-dark hover:-translate-y-0.5",
+    "border border-accent text-accent hover:bg-accent hover:text-white active:bg-accent-dark hover:scale-[1.03]",
 };
 
 const sizeStyles: Record<Size, string> = {
@@ -76,7 +76,7 @@ export function Button({
 
   const classes = [
     "inline-flex items-center justify-center rounded-lg font-medium",
-    "transition-all duration-200 ease-in-out",
+    "transition-all duration-300 ease-in-out",
     "focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2",
     variantStyles[variant],
     sizeStyles[size],
