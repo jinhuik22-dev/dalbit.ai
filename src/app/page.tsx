@@ -51,13 +51,13 @@ export default function HomePage() {
     <div className="bg-white">
       <section className="border-b border-border">
         <div className="mx-auto max-w-6xl px-6 py-24 text-center md:py-28">
-          <h1 className="mx-auto max-w-4xl font-serif text-5xl font-semibold tracking-tight text-foreground md:text-7xl md:leading-[1.02]">
-            Culture. Language. Expression
+          <h1 className="mx-auto max-w-4xl font-serif text-4xl font-semibold tracking-tight text-foreground md:text-5xl md:leading-[1.08]">
+            Culture. Language. Expression.
             <br />
             <span className="text-accent">Create across borders without friction</span>
           </h1>
-          <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-muted md:text-2xl">
-            Creative cultural intelligence for multilingual creators, brands, agencies to grow across global markets.
+          <p className="mx-auto mt-7 max-w-3xl text-lg leading-relaxed text-muted md:text-xl">
+            Dalbit helps multilingual artists, creators to collaborate and grow across globally
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
             <Button href="/start" size="lg">
