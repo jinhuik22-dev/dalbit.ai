@@ -50,16 +50,12 @@ export default function HomePage() {
   return (
     <div className="bg-white">
       <section className="border-b border-border">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-start md:py-24">
-          <div>
-            <h1 className="max-w-4xl font-serif text-4xl font-semibold tracking-tight text-foreground md:text-5xl md:leading-[1.08]">
-              <span className="whitespace-nowrap">Culture. Language. Expression.</span>
+        <div className="mx-auto grid max-w-6xl gap-14 px-6 py-20 md:grid-cols-[minmax(0,1fr)_360px] md:items-start md:py-24 lg:gap-16">
+          <div className="md:pr-4">
+            <h1 className="max-w-4xl font-serif text-4xl font-semibold tracking-tight text-foreground md:text-[2.65rem] md:leading-[1.1] lg:text-5xl">
+              <span className="block lg:whitespace-nowrap">Culture. Language. Expression.</span>
               <br />
-              <span className="text-accent">
-                Create and connect
-                <br />
-                without friction across borders
-              </span>
+              <span className="text-accent">Connect with linguistic precision and cultural alignment</span>
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-relaxed text-muted md:text-xl">
               Dalbit helps multilingual artists, creators to collaborate and grow across globally
@@ -77,7 +73,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-border bg-card p-6 md:p-7">
+          <div className="w-full rounded-2xl border border-border bg-card p-6 md:ml-auto md:max-w-[360px] md:p-7">
             <div className="flex items-start gap-3">
               <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-accent">
                 <span className="text-sm font-bold text-white">D</span>
