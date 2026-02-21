@@ -32,8 +32,8 @@
   --color-warm-800: #1f2937;
   --color-warm-900: #111827;
 
-  --font-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
+  --font-serif: "Neue Haas Grotesk Text Pro", "Neue Haas Unica", "Neue Haas Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: "Neue Haas Grotesk Text Pro", "Neue Haas Unica", "Neue Haas Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* Base styles */

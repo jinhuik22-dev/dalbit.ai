@@ -51,31 +51,8 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            className="inline-flex items-center gap-3 text-[1.75rem] font-semibold tracking-tight text-black transition-colors hover:text-accent"
+            className="text-[1.75rem] font-semibold tracking-tight text-black transition-colors hover:text-accent"
           >
-            <span aria-hidden="true" className="inline-flex h-10 w-10 items-center justify-center">
-              <svg
-                viewBox="0 0 64 64"
-                className="h-9 w-9"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-              >
-                <defs>
-                  <linearGradient id="dalbitMarkRed" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#FF4A45" />
-                    <stop offset="100%" stopColor="#E10600" />
-                  </linearGradient>
-                </defs>
-                <path
-                  d="M25 8C14 8 6 18 6 30s8 22 19 22c-7-4-12-12-12-22S18 12 25 8z"
-                  fill="url(#dalbitMarkRed)"
-                />
-                <path
-                  d="M37 3c14 0 25 12 25 27S51 57 37 57c9-5 15-15 15-27S46 8 37 3z"
-                  fill="url(#dalbitMarkRed)"
-                />
-              </svg>
-            </span>
             dalbit.ai
           </Link>
 
