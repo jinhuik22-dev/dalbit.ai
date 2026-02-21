@@ -1,36 +1,36 @@
 @import "tailwindcss";
 
-/* BETWEEN by dalbit: dark cosmic system */
+/* BETWEEN by dalbit: bright gold minimal system */
 @theme inline {
-  --color-background: #0b0f1a;
-  --color-foreground: #f3f4f6;
+  --color-background: #ffffff;
+  --color-foreground: #111827;
 
-  --color-muted: #9ca3af;
-  --color-muted-foreground: #9ca3af;
+  --color-muted: #6b7280;
+  --color-muted-foreground: #6b7280;
 
-  --color-card: #111827;
-  --color-card-hover: rgba(147, 51, 234, 0.08);
+  --color-card: #ffffff;
+  --color-card-hover: rgba(212, 175, 55, 0.07);
 
-  --color-border: #1f2937;
-  --color-border-light: rgba(31, 41, 55, 0.9);
+  --color-border: #e5e7eb;
+  --color-border-light: #d1d5db;
 
-  --color-accent: #c8a24d;
-  --color-accent-light: rgba(200, 162, 77, 0.24);
-  --color-accent-dark: #a07f36;
-  --color-accent-hover: #d7b766;
+  --color-accent: #d4af37;
+  --color-accent-light: rgba(212, 175, 55, 0.24);
+  --color-accent-dark: #b38e1f;
+  --color-accent-hover: #e0c24f;
 
-  --color-surface: rgba(17, 24, 39, 0.72);
+  --color-surface: rgba(249, 250, 251, 0.95);
 
-  --color-warm-50: #111827;
-  --color-warm-100: #1f2937;
-  --color-warm-200: #273549;
-  --color-warm-300: #334155;
-  --color-warm-400: #475569;
-  --color-warm-500: #64748b;
-  --color-warm-600: #94a3b8;
-  --color-warm-700: #cbd5e1;
-  --color-warm-800: #e2e8f0;
-  --color-warm-900: #f1f5f9;
+  --color-warm-50: #f9fafb;
+  --color-warm-100: #f3f4f6;
+  --color-warm-200: #e5e7eb;
+  --color-warm-300: #d1d5db;
+  --color-warm-400: #9ca3af;
+  --color-warm-500: #6b7280;
+  --color-warm-600: #4b5563;
+  --color-warm-700: #374151;
+  --color-warm-800: #1f2937;
+  --color-warm-900: #111827;
 
   --font-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
   --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
@@ -63,20 +63,20 @@ button {
 
 /* Soft gallery shadows */
 .shadow-warm {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 10px 24px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 1px 2px rgba(17, 24, 39, 0.08), 0 10px 24px rgba(17, 24, 39, 0.06);
 }
 
 .shadow-warm-md {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.42), 0 14px 30px rgba(0, 0, 0, 0.38);
+  box-shadow: 0 2px 8px rgba(17, 24, 39, 0.1), 0 14px 30px rgba(17, 24, 39, 0.08);
 }
 
 .shadow-warm-lg {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.44), 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(17, 24, 39, 0.12), 0 20px 40px rgba(17, 24, 39, 0.1);
 }
 
 /* Remove glow effects (keep class names so existing components don't break) */
 .glow {
-  box-shadow: 0 0 14px rgba(200, 162, 77, 0.22);
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.22);
 }
 
 .glow-text {
@@ -90,8 +90,8 @@ button {
 /* Very subtle texture layers */
 .gradient-hero {
   background:
-    radial-gradient(ellipse at 18% 6%, rgba(200, 162, 77, 0.08) 0%, transparent 56%),
-    radial-gradient(ellipse at 80% 76%, rgba(160, 127, 54, 0.08) 0%, transparent 58%),
+    radial-gradient(ellipse at 18% 6%, rgba(212, 175, 55, 0.08) 0%, transparent 56%),
+    radial-gradient(ellipse at 80% 76%, rgba(179, 142, 31, 0.08) 0%, transparent 58%),
     var(--color-background);
 }
 
@@ -101,7 +101,7 @@ button {
 }
 
 .gradient-warm {
-  background: linear-gradient(180deg, rgba(200, 162, 77, 0.08) 0%, var(--color-background) 100%);
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, var(--color-background) 100%);
 }
 
 /* Chat animations (kept) */
@@ -200,15 +200,15 @@ button {
   background: var(--color-background);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(200, 162, 77, 0.34);
+  background: rgba(212, 175, 55, 0.34);
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(200, 162, 77, 0.5);
+  background: rgba(212, 175, 55, 0.5);
 }
 
 /* Selection color */
 ::selection {
-  background: rgba(200, 162, 77, 0.28);
+  background: rgba(212, 175, 55, 0.28);
   color: var(--color-foreground);
 }

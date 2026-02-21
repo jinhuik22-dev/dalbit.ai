@@ -44,7 +44,7 @@ const AUDIENCES = [
 
 export default function HomePage() {
   return (
-    <div className="bg-background">
+    <div className="bg-[linear-gradient(180deg,#ffffff_0%,#ffffff_58%,#f6e6be_100%)]">
       <section className="border-b border-border">
         <div className="mx-auto max-w-6xl px-6 py-24 text-center md:py-28">
           <h1 className="mx-auto max-w-4xl font-serif text-5xl font-semibold leading-tight tracking-tight text-foreground md:text-6xl">
@@ -84,7 +84,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="who-we-serve" className="border-y border-border bg-background scroll-mt-24">
+      <section id="who-we-serve" className="border-y border-border bg-transparent scroll-mt-24">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
           <div className="mb-10 md:mb-12">
             <p className="text-sm font-medium uppercase tracking-[0.14em] text-muted">Who We Serve</p>
@@ -120,7 +120,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-background">
+      <section className="border-y border-border bg-transparent">
         <div className="mx-auto max-w-6xl px-6 py-14 md:py-16">
           <div className="flex flex-col items-start justify-between gap-5 md:flex-row md:items-center">
             <h2 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
