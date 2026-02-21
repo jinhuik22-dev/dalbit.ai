@@ -61,18 +61,18 @@ export function Navbar() {
                 role="img"
               >
                 <defs>
-                  <linearGradient id="dalbitGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#EBCF78" />
-                    <stop offset="100%" stopColor="#D4AF37" />
+                  <linearGradient id="dalbitMarkRed" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#FF4A45" />
+                    <stop offset="100%" stopColor="#E10600" />
                   </linearGradient>
                 </defs>
                 <path
                   d="M25 8C14 8 6 18 6 30s8 22 19 22c-7-4-12-12-12-22S18 12 25 8z"
-                  fill="url(#dalbitGold)"
+                  fill="url(#dalbitMarkRed)"
                 />
                 <path
                   d="M37 3c14 0 25 12 25 27S51 57 37 57c9-5 15-15 15-27S46 8 37 3z"
-                  fill="url(#dalbitGold)"
+                  fill="url(#dalbitMarkRed)"
                 />
               </svg>
             </span>
@@ -96,7 +96,7 @@ export function Navbar() {
           <div className="hidden md:block">
             <Link
               href="/start"
-              className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2 text-sm font-medium text-black transition-colors hover:bg-accent-hover"
+              className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
             >
               Get Started
             </Link>
@@ -163,7 +163,7 @@ export function Navbar() {
             <Link
               href="/start"
               onClick={() => setMobileOpen(false)}
-              className="block w-full rounded-lg bg-accent px-5 py-2.5 text-center text-sm font-medium text-black transition-colors hover:bg-accent-hover"
+              className="block w-full rounded-lg bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-accent-hover"
             >
               Get Started
             </Link>
