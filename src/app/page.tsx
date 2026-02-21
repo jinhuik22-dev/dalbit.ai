@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
@@ -82,32 +83,24 @@ export default function HomePage() {
   return (
     <div className="gradient-hero">
       <section className="border-b border-border">
-        <div className="mx-auto max-w-6xl px-6 pb-20 pt-24 md:pt-28">
-          <ScrollReveal>
-            <p className="text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
-              Now in early access
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={90}>
-            <h1 className="mt-6 max-w-5xl font-serif text-5xl font-semibold leading-[1.06] tracking-tight text-foreground md:text-7xl">
-              Connect with cross cultural collaborators today!
-            </h1>
-          </ScrollReveal>
-          <ScrollReveal delay={160}>
-            <p className="mt-8 max-w-3xl text-xl leading-relaxed text-muted md:text-3xl">
-              Portfolio first. In between Cultures.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={220}>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Button href="/app" size="lg">
-                Access BETWEEN
-              </Button>
-              <Button href="/trial" variant="ghost" size="lg">
-                Open BETWEEN Trial Mode
-              </Button>
-            </div>
-          </ScrollReveal>
+        <div className="mx-auto max-w-6xl px-6 py-24 text-center">
+          <h1 className="mx-auto max-w-4xl font-serif text-5xl font-semibold leading-[1.06] tracking-tight text-foreground md:text-6xl">
+            Culture. Language. Strategy.
+          </h1>
+          <p className="mx-auto mt-8 max-w-[600px] text-lg leading-relaxed text-muted md:text-xl">
+            We help multilingual creators and artists collaborate confidently across global markets.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
+            <Button href="/start" size="lg">
+              Get Started
+            </Button>
+            <Link
+              href="/trial"
+              className="text-base font-medium text-muted transition-colors hover:text-foreground"
+            >
+              Start BETWEEN Trial
+            </Link>
+          </div>
         </div>
       </section>
 
