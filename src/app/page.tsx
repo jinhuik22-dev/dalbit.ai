@@ -54,8 +54,7 @@ export default function HomePage() {
           <div className="md:pr-4">
             <h1 className="max-w-4xl font-serif text-4xl font-semibold tracking-tight text-foreground md:text-[2.65rem] md:leading-[1.1] lg:text-5xl">
               <span className="block lg:whitespace-nowrap">Culture. Language. Expression.</span>
-              <br />
-              <span className="text-accent">Connect with linguistic precision and cultural alignment</span>
+              <span className="mt-1 block text-accent">Connect with linguistic precision and cultural alignment</span>
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-relaxed text-muted md:text-xl">
               Dalbit helps multilingual artists, creators to collaborate and grow across globally
