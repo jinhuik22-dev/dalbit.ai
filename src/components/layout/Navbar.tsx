@@ -53,25 +53,25 @@ export function Navbar() {
             href="/"
             className="inline-flex items-center gap-3 text-[1.75rem] font-semibold tracking-tight text-black transition-colors hover:text-accent"
           >
-            <span aria-hidden="true" className="inline-flex h-8 w-8 items-center justify-center">
+            <span aria-hidden="true" className="inline-flex h-10 w-10 items-center justify-center">
               <svg
                 viewBox="0 0 64 64"
-                className="h-7 w-7"
+                className="h-9 w-9"
                 xmlns="http://www.w3.org/2000/svg"
                 role="img"
               >
                 <defs>
                   <linearGradient id="dalbitGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#E8CC73" />
+                    <stop offset="0%" stopColor="#EBCF78" />
                     <stop offset="100%" stopColor="#D4AF37" />
                   </linearGradient>
                 </defs>
                 <path
-                  d="M28 8C16 8 6 18 6 30s10 22 22 22c-7-4-12-12-12-22S21 12 28 8z"
+                  d="M25 8C14 8 6 18 6 30s8 22 19 22c-7-4-12-12-12-22S18 12 25 8z"
                   fill="url(#dalbitGold)"
                 />
                 <path
-                  d="M36 8c12 0 22 10 22 22s-10 22-22 22c7-4 12-12 12-22S43 12 36 8z"
+                  d="M37 3c14 0 25 12 25 27S51 57 37 57c9-5 15-15 15-27S46 8 37 3z"
                   fill="url(#dalbitGold)"
                 />
               </svg>
