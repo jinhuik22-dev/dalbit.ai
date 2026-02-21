@@ -1,106 +1,69 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
-import { Section, SectionHeader } from "@/components/ui/Section";
-import { Badge } from "@/components/ui/Badge";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "AI marketing consulting for SMBs. Clear deliverables, measurable outcomes, and practical cross-cultural growth support.",
+    "Dalbit.ai services: BETWEEN (Beta Testing) and SMB Consulting.",
 };
 
-const notForList = [
+const SERVICES = [
   {
-    icon: "⚡",
-    text: "Businesses expecting overnight results. Real growth takes time and iteration.",
+    title: "BETWEEN (Beta Testing)",
+    description:
+      "Test our beta matching flow for cross-cultural collaboration, from intake to first conversation.",
+    cta: "Start BETWEEN Trial",
+    href: "/trial",
   },
   {
-    icon: "🚫",
-    text: "Anyone unwilling to invest time in implementation. We build systems — you have to run them.",
+    title: "SMB Consulting",
+    description:
+      "Practical strategy support for small and mid-sized businesses expanding across languages and markets.",
+    cta: "Book Discovery Call",
+    href: "/services#contact",
   },
-  {
-    icon: "🎭",
-    text: "Companies interested in unethical marketing: fake reviews, misleading claims, or spam tactics.",
-  },
-  {
-    icon: "💸",
-    text: "Businesses with zero budget for marketing. We'll be honest if you're not ready to invest yet.",
-  },
-];
+] as const;
 
 export default function ServicesPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative gradient-hero">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-          <Badge variant="accent" className="mb-6">Services</Badge>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight mb-6 max-w-4xl glow-text">
-            AI-powered marketing consulting{" "}
-            <span className="text-accent">for SMBs ready to grow.</span>
+      <section className="border-b border-border bg-white">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <p className="text-sm font-medium uppercase tracking-[0.14em] text-muted">Services</p>
+          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
+            What is Dalbit.ai services?
           </h1>
-          <p className="text-lg md:text-xl text-muted max-w-2xl mb-10 leading-relaxed">
-            Clear deliverables. Measurable outcomes. No fluff. Let&apos;s identify
-            what matters most and design the right support for your stage.
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
+            Keep it simple: two focused services for global growth.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button href="#contact" size="lg">
-              Book a Discovery Call
-            </Button>
-            <Button href="/trial" variant="secondary" size="lg">
-              Try Free Tools First
-            </Button>
-          </div>
         </div>
       </section>
 
-      {/* Who It's NOT For */}
-      <Section className="border-t border-border/50">
-        <SectionHeader
-          title="Who this is not for"
-          subtitle="We believe in honest alignment. Here's when we'll tell you we're not the right fit."
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
-          {notForList.map((item) => (
-            <div
-              key={item.text}
-              className="flex items-start gap-4 p-5 rounded-xl border border-border/50 bg-surface"
-            >
-              <span className="text-2xl flex-shrink-0">{item.icon}</span>
-              <p className="text-muted text-sm leading-relaxed">{item.text}</p>
-            </div>
+      <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+        <div className="grid gap-4 md:grid-cols-2">
+          {SERVICES.map((service) => (
+            <article key={service.title} className="rounded-2xl border border-border bg-card p-6 md:p-8">
+              <h2 className="text-2xl font-semibold tracking-tight text-foreground">{service.title}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted md:text-base">
+                {service.description}
+              </p>
+              <Button href={service.href} className="mt-6">
+                {service.cta}
+              </Button>
+            </article>
           ))}
         </div>
-      </Section>
+      </section>
 
-      {/* Contact CTA */}
-      <section id="contact" className="gradient-moonlight border-t border-border/50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Ready to talk?
+      <section id="contact" className="border-t border-border bg-white">
+        <div className="mx-auto max-w-6xl px-6 py-14 text-center md:py-16">
+          <h2 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+            Need help choosing?
           </h2>
-          <p className="text-muted text-lg mb-8 max-w-xl mx-auto">
-            Book a free 30-minute discovery call. We&apos;ll review your current
-            situation, identify quick wins, and see if there&apos;s a fit.
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted md:text-base">
+            We can walk you through whether BETWEEN beta testing or SMB consulting is right for your team.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg">
-              Book a Discovery Call
-            </Button>
-            <Button variant="outline" size="lg">
-              Request a Custom Quote
-            </Button>
-          </div>
-          <p className="text-xs text-muted-foreground mt-6">
-            No pressure. No hard sell. Just an honest conversation.
-          </p>
-
-          {/* Calendly placeholder */}
-          <div className="mt-12 p-8 rounded-2xl border border-border/50 bg-card">
-            <p className="text-muted text-sm">
-              📅 Calendly embed placeholder — integrate your booking link here.
-            </p>
-          </div>
+          <Button className="mt-6">Contact Dalbit</Button>
         </div>
       </section>
     </>

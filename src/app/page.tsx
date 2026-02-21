@@ -53,9 +53,13 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-start md:py-24">
           <div>
             <h1 className="max-w-4xl font-serif text-4xl font-semibold tracking-tight text-foreground md:text-5xl md:leading-[1.08]">
-              Culture. Language. Expression.
+              <span className="whitespace-nowrap">Culture. Language. Expression.</span>
               <br />
-              <span className="text-accent">Create across borders without friction</span>
+              <span className="text-accent">
+                Create and connect
+                <br />
+                without friction across borders
+              </span>
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-relaxed text-muted md:text-xl">
               Dalbit helps multilingual artists, creators to collaborate and grow across globally
