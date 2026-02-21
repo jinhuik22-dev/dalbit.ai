@@ -59,7 +59,7 @@ export default function HomePage() {
             </Button>
             <Link
               href="/trial"
-              className="text-base font-medium text-accent transition-all duration-300 ease-in-out hover:scale-[1.03] hover:text-accent-hover"
+              className="text-lg font-semibold text-accent transition-all duration-300 ease-in-out hover:scale-[1.03] hover:text-accent-hover md:text-xl"
             >
               Start BETWEEN Trial
             </Link>

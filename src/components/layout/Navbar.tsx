@@ -43,7 +43,7 @@ export function Navbar() {
 
   return (
     <nav
-      className="sticky top-0 z-50 border-b border-border bg-background"
+      className="sticky top-0 z-50 border-b border-gray-200 bg-white"
       role="navigation"
       aria-label="Main navigation"
     >
@@ -51,7 +51,7 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            className="text-xl font-semibold tracking-tight text-foreground transition-colors hover:text-accent"
+            className="text-[1.75rem] font-semibold tracking-tight text-black transition-colors hover:text-accent"
           >
             dalbit.ai
           </Link>
@@ -62,7 +62,7 @@ export function Navbar() {
                 key={href}
                 href={href}
                 className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
-                  isActive(href) ? "text-foreground" : "text-muted hover:text-foreground"
+                  isActive(href) ? "text-black" : "text-gray-600 hover:text-black"
                 }`}
               >
                 {label}
@@ -73,7 +73,7 @@ export function Navbar() {
           <div className="hidden md:block">
             <Link
               href="/start"
-              className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+              className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2 text-sm font-medium text-black transition-colors hover:bg-accent-hover"
             >
               Get Started
             </Link>
@@ -81,7 +81,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-lg p-2 text-muted transition-colors hover:bg-card hover:text-foreground md:hidden"
+            className="inline-flex items-center justify-center rounded-lg p-2 text-gray-700 transition-colors hover:bg-gray-100 hover:text-black md:hidden"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -117,7 +117,7 @@ export function Navbar() {
       <div
         id="mobile-menu"
         className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
-          mobileOpen ? "max-h-[320px] opacity-100 bg-background" : "max-h-0 opacity-0"
+          mobileOpen ? "max-h-[320px] opacity-100 bg-white" : "max-h-0 opacity-0"
         }`}
         aria-hidden={!mobileOpen}
       >
@@ -130,7 +130,7 @@ export function Navbar() {
               className={`block rounded-lg px-4 py-2.5 text-sm font-medium transition-colors ${
                 isActive(href)
                   ? "bg-accent/10 text-accent"
-                  : "text-muted hover:bg-card hover:text-foreground"
+                  : "text-gray-600 hover:bg-gray-100 hover:text-black"
               }`}
             >
               {label}
@@ -140,7 +140,7 @@ export function Navbar() {
             <Link
               href="/start"
               onClick={() => setMobileOpen(false)}
-              className="block w-full rounded-lg bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+              className="block w-full rounded-lg bg-accent px-5 py-2.5 text-center text-sm font-medium text-black transition-colors hover:bg-accent-hover"
             >
               Get Started
             </Link>
